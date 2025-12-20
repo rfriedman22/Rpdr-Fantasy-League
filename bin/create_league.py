@@ -54,6 +54,9 @@ scores = scores.T.rename(
     }
 ).rename_axis("", axis="columns")
 
+with open(scoreboard_file, "r") as f:
+    scoreboard_md = f.read()
+
 # Switch to gh-pages to build the website
 run(["git", "checkout", "gh-pages"])
 
@@ -75,9 +78,6 @@ for plot_func, filename in plot_functions:
     fig = plot_func(league)
     fig.savefig(os.path.join(plots_dir, filename))
 
-with open(scoreboard_file, "r") as f:
-    scoreboard_md = f.read()
-
 event_scores = league.rules.get_event_scores()
 event_scores = event_scores.rename_axis("Event", axis="index").rename("Point Value")
 event_scores = event_scores.rename(lambda x: x.replace("_", " ").title())
@@ -96,11 +96,13 @@ scoreboard_md = scoreboard_md.format(
     rank_rules=rank_scores.to_markdown(),
     captain_multiplier=league.rules.get_captain_multiplier(),
     scores_table=scores.to_markdown(),
-    total_scores_plot="total_scores.png",
-    stacked_total_scores_plot="stacked_total_scores.png",
-    weekly_scores_plot="weekly_scores.png",
-    rank_scores_plot="rank_scores.png",
-    weekly_performance_scores_plot="weekly_performance_scores.png",
+    total_scores_plot=os.path.join(plots_dir, "total_scores.png"),
+    stacked_total_scores_plot=os.path.join(plots_dir, "stacked_total_scores.png"),
+    weekly_scores_plot=os.path.join(plots_dir, "weekly_scores.png"),
+    rank_scores_plot=os.path.join(plots_dir, "rank_scores.png"),
+    weekly_performance_scores_plot=os.path.join(
+        plots_dir, "weekly_performance_scores.png"
+    ),
 )
 
 with open(os.path.join(page_dir, "scoreboard.md"), "w") as f:
