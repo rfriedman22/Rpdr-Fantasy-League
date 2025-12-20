@@ -17,8 +17,12 @@ parser.add_argument("--season", type=str, help="Season identifier.", required=Tr
 parser.add_argument(
     "--use_small_scores", action="store_true", help="Use small scoring system."
 )
+parser.add_argument(
+    "--debug", action="store_true", help="Stop before committing changes."
+)
 args = parser.parse_args()
 season = args.season
+debug = args.debug
 
 if args.use_small_scores:
     event_scores_file = "small.tsv"
@@ -110,6 +114,10 @@ scoreboard_md = scoreboard_md.format(
 
 with open(os.path.join(page_dir, "index.md"), "w") as f:
     f.write(scoreboard_md)
+
+if debug:
+    print("Debug mode enabled; not committing changes.")
+    exit(0)
 
 # Commit and push
 run(["git", "add", "."])
