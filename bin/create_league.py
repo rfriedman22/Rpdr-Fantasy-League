@@ -61,7 +61,8 @@ with open(scoreboard_file, "r") as f:
 run(["git", "checkout", "gh-pages"])
 
 page_dir = os.path.join("seasons", season)
-plots_dir = os.path.join("assets", "plots", season)
+# The plots need to be in the same directory as the page for the website to build properly
+plots_dir = os.path.join(page_dir, "plots")
 os.makedirs(page_dir, exist_ok=True)
 os.makedirs(plots_dir, exist_ok=True)
 
@@ -90,9 +91,6 @@ rank_scores = rank_scores.rename(
     }
 ).rename_axis("Rank", axis="index")
 
-# Before we fill in the template, we need to set the path of the plots to where they will be when the website is built
-plots_dir = os.path.join("/", plots_dir)
-
 scoreboard_md = scoreboard_md.format(
     season=season,
     performance_rules=event_scores.to_markdown(),
@@ -108,7 +106,7 @@ scoreboard_md = scoreboard_md.format(
     ),
 )
 
-with open(os.path.join(page_dir, "scoreboard.md"), "w") as f:
+with open(os.path.join(page_dir, "index.md"), "w") as f:
     f.write(scoreboard_md)
 
 # Commit and push
