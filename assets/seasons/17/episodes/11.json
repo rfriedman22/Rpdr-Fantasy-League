@@ -1,0 +1,40 @@
+{
+    "episode": 11,
+    "finale": false,
+    "queen_eliminated": ["Lydia B Kolins"],
+    "performance": {
+        "tops": [
+            "Onya Nurve",
+            "Sam Star"
+        ],
+        "win_main_challenge": [
+            "Onya Nurve"
+        ],
+        "bottoms": [
+            "Lana Ja'Rae",
+            "Lydia B Kolins",
+            "Jewels Sparkles"
+        ],
+        "lip_sync_participants": [
+            "Lana Ja'Rae",
+            "Lydia B Kolins"
+        ],
+        "lip_sync_winner": [
+            "Lana Ja'Rae"
+        ],
+        "win_mini_challenge": [],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [
+            "Lydia B Kolins"
+        ],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

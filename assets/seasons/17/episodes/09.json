@@ -1,0 +1,41 @@
+{
+    "episode": 9,
+    "finale": false,
+    "queen_eliminated": ["Kori King"],
+    "performance": {
+        "tops": [
+            "Jewels Sparkles",
+            "Arrietty",
+            "Lexi Love"
+        ],
+        "win_main_challenge": [
+            "Jewels Sparkles"
+        ],
+        "bottoms": [
+            "Kori King",
+            "Lydia B Kolins",
+            "Onya Nurve"
+        ],
+        "lip_sync_participants": [
+            "Kori King",
+            "Lydia B Kolins"
+        ],
+        "lip_sync_winner": [
+            "Lydia B Kolins"
+        ],
+        "win_mini_challenge": [
+            "Suzie Toot"
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

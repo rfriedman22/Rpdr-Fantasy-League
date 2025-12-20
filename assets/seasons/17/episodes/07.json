@@ -1,0 +1,42 @@
+{
+    "episode": 7,
+    "finale": false,
+    "queen_eliminated": ["Crystal Envy"],
+    "performance": {
+        "tops": [
+            "Onya Nurve",
+            "Lexi Love",
+            "Sam Star",
+            "Jewels Sparkles"
+        ],
+        "win_main_challenge": [
+            "Onya Nurve"
+        ],
+        "bottoms": [
+            "Lana Ja'Rae",
+            "Crystal Envy",
+            "Arrietty"
+        ],
+        "lip_sync_participants": [
+            "Lana Ja'Rae",
+            "Crystal Envy"
+        ],
+        "lip_sync_winner": [
+            "Lana Ja'Rae"
+        ],
+        "win_mini_challenge": [],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [
+            "Lana Ja'Rae"
+        ],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

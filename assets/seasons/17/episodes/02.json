@@ -1,0 +1,38 @@
+{
+    "episode": 2,
+    "finale": false,
+    "queen_eliminated": [],
+    "performance": {
+        "tops": [
+            "Lexi Love",
+            "Crystal Envy"
+        ],
+        "win_main_challenge": [
+            "Lexi Love"
+        ],
+        "bottoms": [
+            "Hormona Lisa"
+        ],
+        "lip_sync_participants": [
+            "Hormona Lisa",
+            "Acacia Forgot"
+        ],
+        "lip_sync_winner": [
+            "Acacia Forgot"
+        ],
+        "win_mini_challenge": [
+            "Lana Ja'Rae"
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

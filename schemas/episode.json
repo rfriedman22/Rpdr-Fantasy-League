@@ -1,0 +1,28 @@
+{
+    "episode": 1,
+    "finale": false,
+    "queen_eliminated": [],
+    "performance": {
+        "tops": [
+        ],
+        "win_main_challenge": [
+        ],
+        "bottoms": [
+        ],
+        "lip_sync_participants": [],
+        "lip_sync_winner": [],
+        "win_mini_challenge": [
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

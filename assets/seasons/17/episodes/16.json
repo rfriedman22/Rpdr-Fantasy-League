@@ -1,0 +1,41 @@
+{
+    "episode": 16,
+    "finale": true,
+    "queen_eliminated": ["Lexi Love", "Sam Star"],
+    "performance": {
+        "tops": [
+        ],
+        "win_main_challenge": [
+        ],
+        "bottoms": [
+        ],
+        "lip_sync_participants": [
+        ],
+        "lip_sync_winner": [
+        ],
+        "win_mini_challenge": [
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [
+        ],
+        "wig_reveal": [
+            "Lexi Love"
+        ],
+        "lip_sync_malfunction": [
+        ],
+        "miss_congeniality": [
+            "Crystal Envy"
+        ],
+        "wins_lip_sync_smackdown": [
+        ]
+    },
+    "finale_data": {
+        "winner": [
+            "Onya Nurve"
+        ],
+        "runners_up": [
+            "Jewels Sparkles"
+        ]
+    }
+}

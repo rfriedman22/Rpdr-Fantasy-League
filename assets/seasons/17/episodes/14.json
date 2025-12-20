@@ -1,0 +1,38 @@
+{
+    "episode": 14,
+    "finale": false,
+    "queen_eliminated": ["Suzie Toot"],
+    "performance": {
+        "tops": [
+            "Jewels Sparkles",
+            "Lexi Love",
+            "Onya Nurve"
+        ],
+        "win_main_challenge": [
+            "Jewels Sparkles"
+        ],
+        "bottoms": [
+            "Suzie Toot",
+            "Sam Star"
+        ],
+        "lip_sync_participants": [
+            "Suzie Toot",
+            "Sam Star"
+        ],
+        "lip_sync_winner": [
+            "Sam Star"
+        ],
+        "win_mini_challenge": [],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

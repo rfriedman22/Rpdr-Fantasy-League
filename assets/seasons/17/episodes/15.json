@@ -1,0 +1,41 @@
+{
+    "episode": 15,
+    "finale": false,
+    "queen_eliminated": [],
+    "performance": {
+        "tops": [],
+        "win_main_challenge": [],
+        "bottoms": [],
+        "lip_sync_participants": [],
+        "lip_sync_winner": [
+            "Lydia B Kolins",
+            "Suzie Toot",
+            "Suzie Toot",
+            "Suzie Toot",
+            "Lucky Starzzz",
+            "Kori King",
+            "Kori King",
+            "Lana Ja'Rae"
+        ],
+        "win_mini_challenge": [],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [
+            "Hormona Lisa",
+            "Lydia B Kolins",
+            "Suzie Toot",
+            "Acacia Forgot",
+            "Crystal Envy"
+        ],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": [
+            "Suzie Toot"
+        ]
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

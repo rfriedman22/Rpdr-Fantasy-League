@@ -1,0 +1,39 @@
+{
+    "episode": 6,
+    "finale": false,
+    "queen_eliminated": ["Hormona Lisa"],
+    "performance": {
+        "tops": [
+            "Crystal Envy",
+            "Arrietty",
+            "Sam Star"
+        ],
+        "win_main_challenge": [
+            "Arrietty"
+        ],
+        "bottoms": [
+            "Hormona Lisa",
+            "Lana Ja'Rae",
+            "Acacia Forgot"
+        ],
+        "lip_sync_participants": [
+            "Hormona Lisa",
+            "Lana Ja'Rae"
+        ],
+        "lip_sync_winner": [
+            "Lana Ja'Rae"
+        ],
+        "win_mini_challenge": [],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

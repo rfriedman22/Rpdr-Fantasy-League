@@ -1,0 +1,41 @@
+{
+    "episode": 3,
+    "finale": false,
+    "queen_eliminated": ["Lucky Starzzz"],
+    "performance": {
+        "tops": [
+            "Onya Nurve",
+            "Sam Star",
+            "Arrietty"
+        ],
+        "win_main_challenge": [
+            "Sam Star"
+        ],
+        "bottoms": [
+            "Lucky Starzzz",
+            "Kori King",
+            "Joella"
+        ],
+        "lip_sync_participants": [
+            "Joella",
+            "Lucky Starzzz"
+        ],
+        "lip_sync_winner": [
+            "Joella"
+        ],
+        "win_mini_challenge": [],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [
+            "Lucky Starzzz"
+        ],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

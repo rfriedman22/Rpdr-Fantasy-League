@@ -1,0 +1,41 @@
+{
+    "episode": 8,
+    "finale": false,
+    "queen_eliminated": ["Acacia Forgot"],
+    "performance": {
+        "tops": [
+            "Suzie Toot",
+            "Jewels Sparkles",
+            "Onya Nurve",
+            "Sam Star"
+        ],
+        "win_main_challenge": [
+            "Sam Star"
+        ],
+        "bottoms": [
+            "Kori King",
+            "Acacia Forgot"
+        ],
+        "lip_sync_participants": [
+            "Kori King",
+            "Acacia Forgot"
+        ],
+        "lip_sync_winner": [
+            "Kori King"
+        ],
+        "win_mini_challenge": [],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [
+            "Kori King"
+        ],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

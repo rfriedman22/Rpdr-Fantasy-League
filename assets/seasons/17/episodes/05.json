@@ -1,0 +1,39 @@
+{
+    "episode": 5,
+    "finale": false,
+    "queen_eliminated": [],
+    "performance": {
+        "tops": [
+            "Suzie Toot",
+            "Onya Nurve",
+            "Hormona Lisa"
+        ],
+        "win_main_challenge": [
+            "Suzie Toot"
+        ],
+        "bottoms": [
+            "Arrietty",
+            "Kori King",
+            "Lydia B Kolins"
+        ],
+        "lip_sync_participants": [
+            "Lydia B Kolins",
+            "Arrietty"
+        ],
+        "lip_sync_winner": [
+            "Lydia B Kolins"
+        ],
+        "win_mini_challenge": [],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}

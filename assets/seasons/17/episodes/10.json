@@ -1,0 +1,39 @@
+{
+    "episode": 10,
+    "finale": false,
+    "queen_eliminated": ["Arrietty"],
+    "performance": {
+        "tops": [
+            "Lydia B Kolins",
+            "Lana Ja'Rae",
+            "Sam Star"
+        ],
+        "win_main_challenge": [
+            "Lydia B Kolins"
+        ],
+        "bottoms": [
+            "Arrietty",
+            "Jewels Sparkles",
+            "Lexi Love"
+        ],
+        "lip_sync_participants": [
+            "Arrietty",
+            "Jewels Sparkles"
+        ],
+        "lip_sync_winner": [
+            "Jewels Sparkles"
+        ],
+        "win_mini_challenge": [],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
