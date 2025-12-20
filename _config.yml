@@ -1,0 +1,14 @@
+title: "Ryan's RPDR Fantasy League"
+
+theme: minima
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
