@@ -61,7 +61,7 @@ with open(scoreboard_file, "r") as f:
 run(["git", "checkout", "gh-pages"])
 
 page_dir = os.path.join("seasons", season)
-plots_dir = os.path.join("assets", "plots", season)
+plots_dir = os.path.join(page_dir, "assets", "plots", season)
 os.makedirs(page_dir, exist_ok=True)
 os.makedirs(plots_dir, exist_ok=True)
 
@@ -109,7 +109,7 @@ with open(os.path.join(page_dir, "scoreboard.md"), "w") as f:
     f.write(scoreboard_md)
 
 # Commit and push
-run(["git", "add", "."])
+# run(["git", "add", "."])
 # run(["git", "commit", "-m", f"Update league page for season {season}"])
 # run(["git", "push"])
 
