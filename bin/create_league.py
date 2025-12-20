@@ -91,7 +91,7 @@ rank_scores = rank_scores.rename(
 ).rename_axis("Rank", axis="index")
 
 # Before we fill in the template, we need to set the path of the plots to where they will be when the website is built
-plots_dir = os.path.join(page_dir, plots_dir)
+plots_dir = os.path.join("/", plots_dir)
 
 scoreboard_md = scoreboard_md.format(
     season=season,
