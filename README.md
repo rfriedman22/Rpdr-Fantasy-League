@@ -63,9 +63,6 @@ onya.get_performance_events()
 ```
 
 ## Roadmap
-- Create the repo with MIT license. Check everything in, including the website
-- Set up the Github pages
-- Update the Jotform with link to the page and send out
 - Create a config file for each league/season. The config should include a different template for each season.
 - Figure out how to have pages for multiple leagues
 - Show exact events week-to-week for the queens
