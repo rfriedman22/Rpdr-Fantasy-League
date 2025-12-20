@@ -1,3 +1,6 @@
+---
+title: Season {season}
+---
 # RuPaul's Drag Race Season {season} Fantasy League
 
 This is the fantasy league for RuPaul's Drag Race I ran for some friends. I ran it out of Google Sheets, but it was kind of a pain to maintain that way, so I decided to make myself an app to manage the scoring for me. I've tested it out by recreating the league from this season.
