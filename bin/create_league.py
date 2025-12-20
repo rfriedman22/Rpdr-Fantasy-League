@@ -112,9 +112,9 @@ with open(os.path.join(page_dir, "index.md"), "w") as f:
     f.write(scoreboard_md)
 
 # Commit and push
-# run(["git", "add", "."])
-# run(["git", "commit", "-m", f"Update league page for season {season}"])
-# run(["git", "push"])
+run(["git", "add", "."])
+run(["git", "commit", "-m", f"Update league page for season {season}"])
+run(["git", "push"])
 
 # Switch back to main branch
 run(["git", "checkout", "main"])
