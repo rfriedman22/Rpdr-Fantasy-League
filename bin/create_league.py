@@ -91,6 +91,8 @@ rank_scores = rank_scores.rename(
     }
 ).rename_axis("Rank", axis="index")
 
+# Now when we make the page, the path needs to be relative to the page directory
+plots_dir = "plots"
 scoreboard_md = scoreboard_md.format(
     season=season,
     performance_rules=event_scores.to_markdown(),
