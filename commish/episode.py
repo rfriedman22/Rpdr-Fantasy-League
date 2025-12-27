@@ -57,7 +57,7 @@ class Episode:
 
             # If there's double shantay or sashay, apply to the lip sync participants
             elif k in ["double_shantay", "double_sashay"] and v:
-                for queen in performance["lip_sync_participants"]:
+                for queen in performance["lip_sync_for_your_life"]:
                     result.append([k, queen])
 
         result = pd.DataFrame(result, columns=["event", "queen"])
