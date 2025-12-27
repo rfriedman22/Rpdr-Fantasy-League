@@ -224,3 +224,6 @@ _site/
 .bundle/
 vendor/
 Gemfile.lock
+
+# Custom
+site-build/
