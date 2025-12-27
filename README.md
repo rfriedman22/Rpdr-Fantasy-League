@@ -62,6 +62,25 @@ onya = league.cast.get_queen("Onya Nurve")
 onya.get_performance_events()
 ```
 
+### Adding an Episode
+To add an episode to your league, make a copy of `schemas/episode.json` called `assets/seasons/<season number>/episodes/<episode number>.json`. Note that the episode number must be two digits, so single digit episodes need a leading zero. Any fields where the values are lists can be filled in with names of queens in the season's `queens.txt` file. Some special cases are below:
+- In the case of a lip sync smackdown, points are applied each time a queen's name is entered for winning a lip sync. Do not enter queens for having to lip sync for their life.
+- If there is a double sashay or a double shantay, the points are applied to all queens who have to lip sync for their life.
+- In the finale episode, set the `finale` field to `true`, fill in the winner and runners up, and place any queens who made it to the finale but did not advance to the final lip sync in the `queen_eliminated` field.
+
+## Publishing to the Web
+There is a template for the website located in `site-template`. To publish the site to the web, run:
+```sh
+sh bin/publish.sh
+```
+This script starts by creating a temporary copy of `site-template` in a directory called `site-build`. Then it builds the league pages into this directory. Next it will switch to the `gh-pages`, move all the files out of the build, and remove the directory. Finally, it will commit and push to `gh-pages` before switching back to `main`.
+
+You can test a local copy first by running:
+```sh
+sh bin/build_local.sh
+```
+This does a similar thing to `publish.sh`, but instead of switching branches, it will launch a local server so you can preview the website.
+
 ## Roadmap
 - Split `create_league.py` into a script that creates and saves the league state, and one that reads that in to generate the plots and build the markdown file appropriately. This way the markdown file for each seaason should expect a fixed set of input arguments. In the future, it might be better to build using a Jupyter notebook or something like what Rmarkdown/knitr does so that the content is generated within the template.
 - Create a config file for each league/season. The config should include a different template for each season.
