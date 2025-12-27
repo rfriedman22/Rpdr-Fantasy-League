@@ -63,6 +63,7 @@ onya.get_performance_events()
 ```
 
 ## Roadmap
+- Split `create_league.py` into a script that creates and saves the league state, and one that reads that in to generate the plots and build the markdown file appropriately. This way the markdown file for each seaason should expect a fixed set of input arguments. In the future, it might be better to build using a Jupyter notebook or something like what Rmarkdown/knitr does so that the content is generated within the template.
 - Create a config file for each league/season. The config should include a different template for each season.
 - Figure out how to have pages for multiple leagues
 - Show exact events week-to-week for the queens

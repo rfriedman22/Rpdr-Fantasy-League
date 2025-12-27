@@ -224,3 +224,7 @@ _site/
 .bundle/
 vendor/
 Gemfile.lock
+
+# Custom
+*.pkl
+site-build/

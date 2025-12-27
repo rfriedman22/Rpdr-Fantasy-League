@@ -2,14 +2,9 @@
 import os
 import argparse
 from glob import glob
-import subprocess
 
 from commish.league import League
 from commish import plotting
-
-
-def run(cmd):
-    subprocess.run(cmd, check=True)
 
 
 parser = argparse.ArgumentParser(description="Create and analyze a fantasy league.")
@@ -17,12 +12,17 @@ parser.add_argument("--season", type=str, help="Season identifier.", required=Tr
 parser.add_argument(
     "--use_small_scores", action="store_true", help="Use small scoring system."
 )
+parser.add_argument("--debug", action="store_true", help="Enable debug mode.")
 parser.add_argument(
-    "--debug", action="store_true", help="Stop before committing changes."
+    "--output_dir",
+    type=str,
+    help="Base directory for files to be output. Things will go to <output_dir>/seasons/<season>",
+    default="site-build",
 )
 args = parser.parse_args()
 season = args.season
 debug = args.debug
+output_dir = args.output_dir
 
 if args.use_small_scores:
     event_scores_file = "small.tsv"
@@ -34,7 +34,7 @@ season_dir = os.path.join("assets", "seasons", season)
 rules_dir = os.path.join("assets", "rules")
 queens_file = os.path.join(season_dir, "queens.txt")
 scoreboard_file = os.path.join(season_dir, "scoreboard.md")
-
+page_dir = os.path.join(output_dir, "seasons", season)
 league = League(
     season=season,
     queens_file=queens_file,
@@ -61,10 +61,6 @@ scores = scores.T.rename(
 with open(scoreboard_file, "r") as f:
     scoreboard_md = f.read()
 
-# Switch to gh-pages to build the website
-run(["git", "checkout", "gh-pages"])
-
-page_dir = os.path.join("seasons", season)
 # The plots need to be in the same directory as the page for the website to build properly
 plots_dir = os.path.join(page_dir, "plots")
 os.makedirs(page_dir, exist_ok=True)
@@ -114,15 +110,3 @@ scoreboard_md = scoreboard_md.format(
 
 with open(os.path.join(page_dir, "index.md"), "w") as f:
     f.write(scoreboard_md)
-
-if debug:
-    print("Debug mode enabled; not committing changes.")
-    exit(0)
-
-# Commit and push
-run(["git", "add", "."])
-run(["git", "commit", "-m", f"Update league page for season {season}"])
-run(["git", "push"])
-
-# Switch back to main branch
-run(["git", "checkout", "main"])
