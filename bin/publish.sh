@@ -6,7 +6,7 @@ set -u
 # Ensure clean working tree
 if ! git diff --quiet; then
   echo "Working tree not clean. Commit or stash changes first."
-  # exit 1
+  exit 1
 fi
 
 # Build the site
