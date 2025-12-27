@@ -20,7 +20,7 @@ Each week, you gain or lose points when the following things happen to your team
 | Tops                    |            25 |
 | Win Main Challenge      |            30 |
 | Bottoms                 |           -15 |
-| Lip Sync Participants   |           -15 |
+| Lip Sync For Your Life  |           -15 |
 | Lip Sync Winner         |            10 |
 | Win Mini Challenge      |            15 |
 | Double Sashay           |           -30 |
