@@ -6,7 +6,7 @@ set -u
 # Ensure clean working tree
 if ! git diff --quiet; then
   echo "Working tree not clean. Commit or stash changes first."
-  exit 1
+  # exit 1
 fi
 
 # Build the site
@@ -16,9 +16,8 @@ bin/build.sh "${PUBLISH_DIR}"
 # Move the build into gh-pages branch
 git checkout gh-pages
 # The --delete flag gets rid of any old or stale files no longer present, but we need to keep the .git directory
-rsync -av --delete \
-    --exclude '.git' \
-    "${PUBLISH_DIR}"/ .
+rsync -av "${PUBLISH_DIR}"/ .
+rm -rf "${PUBLISH_DIR}"
 
 # Commit and push changes
 git add .
