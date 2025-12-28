@@ -5,7 +5,9 @@ title: Season {season}
 
 This is the fantasy league for RuPaul's Drag Race I ran for some friends. I ran it out of Google Sheets, but it was kind of a pain to maintain that way, so I decided to make myself an app to manage the scoring for me. I've tested it out by recreating the league from this season.
 
-Right now, the scoring information is with an updated rules set I'm using for next season. It doesn't change the results, but it's not the same rules as what actually went down. Once I set things up for the upcoming season and work out the website a little bit more, I'll revert this season to the scoring system that was used at the time.
+This season's queens are:
+
+{queen_names}
 
 ## Scoring
 

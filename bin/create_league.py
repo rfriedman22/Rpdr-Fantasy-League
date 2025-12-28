@@ -42,7 +42,16 @@ episodes = sorted(glob(os.path.join(season_config["episodes_dir"], "*.json")))
 for episode_file in episodes:
     league.add_episode(episode_file)
 
-# The total scores should be displayed in a nice way on the website
+# Set up the scoreboard page
+with open(season_config["scoreboard"], "r") as f:
+    scoreboard_md = f.read()
+
+# Tabular data
+queen_names = league.cast.get_queens().index.tolist()
+queen_names.sort()
+queen_names = ["- " + name for name in queen_names]
+queen_names = "\n".join(queen_names)
+
 scores = league.total_scores().sort_values("total_score", ascending=False)
 scores = scores.T.rename(
     index={
@@ -52,8 +61,17 @@ scores = scores.T.rename(
     }
 ).rename_axis("", axis="columns")
 
-with open(season_config["scoreboard"], "r") as f:
-    scoreboard_md = f.read()
+event_scores = league.rules.get_event_scores()
+event_scores = event_scores.rename_axis("Event", axis="index").rename("Point Value")
+event_scores = event_scores.rename(lambda x: x.replace("_", " ").title())
+
+rank_scores = league.rules.get_rank_scores()
+rank_scores = rank_scores.rename(
+    columns={
+        "team_score": "Worth of the Team",
+        "queen_score": "Worth of the Queen",
+    }
+).rename_axis("Rank", axis="index")
 
 # The plots need to be in the same directory as the page for the website to build properly
 plots_dir = os.path.join(page_dir, "plots")
@@ -73,22 +91,11 @@ for plot_func, filename in plot_functions:
     fig = plot_func(league)
     fig.savefig(os.path.join(plots_dir, filename))
 
-event_scores = league.rules.get_event_scores()
-event_scores = event_scores.rename_axis("Event", axis="index").rename("Point Value")
-event_scores = event_scores.rename(lambda x: x.replace("_", " ").title())
-
-rank_scores = league.rules.get_rank_scores()
-rank_scores = rank_scores.rename(
-    columns={
-        "team_score": "Worth of the Team",
-        "queen_score": "Worth of the Queen",
-    }
-).rename_axis("Rank", axis="index")
-
 # Now when we make the page, the path needs to be relative to the page directory
 plots_dir = "plots"
 scoreboard_md = scoreboard_md.format(
     season=season,
+    queen_names=queen_names,
     performance_rules=event_scores.to_markdown(),
     rank_rules=rank_scores.to_markdown(),
     captain_multiplier=league.rules.get_captain_multiplier(),
