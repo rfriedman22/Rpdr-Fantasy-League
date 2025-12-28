@@ -12,18 +12,14 @@ pip install .
 
 Build a season:
 ```sh
-python3 bin/create_league.py --season 17
+python3 bin/create_league.py --season-config season-configs/17.yaml
 ```
 
-This will build a webpage reporting the state of the league. It expects the following files in `assets/seasons/17/`:
-- `contestants.tsv` A table of contestants in the league. The first row is a header that is ignored. Each row is a contestant. The first column is their name, the remaining columns are their rankings of the queens from top to bottom.
-- `queens.txt` The list of queens in this season's cast. Each queen is on their own line.
-- `scoreboard.md` A markdown file that serves as the template for the scoreboard report.
-- `episodes/` A directory of json files numbered `01.json`, `02.json`, etc. following the pattern in `schemas/episode.json`.
+This will build a webpage reporting the state of the league. It expects a file formatted like the one in `schemas/season-config.yaml`, which should contain the season number, the path to several files, and a directory containing json files numbered `01.json`, `02.json`, etc. following the pattern in `schemas/episode.json`.
 
-The rules files are in `assets/rules/`:
-- `event_scores` contain the large and small rules for events like tops and bottoms of the week. Default is large rules. Toggle to small with the `--use_small_scores` flag.
-- `rank_values` contain the ranks values for a final three or final four situation. Right now only final four is enabled.
+There are multiple rulesets provided in `assets/rules/`:
+- `event_scores` contain the large and small rules for events like tops and bottoms of the week.
+- `rank_values` contain the ranks values for a final three or final four situation.
 
 ## Working with your league
 The main class for a league is the `League` class. You can create a league with the above files as follows:
@@ -63,7 +59,7 @@ onya.get_performance_events()
 ```
 
 ### Adding an Episode
-To add an episode to your league, make a copy of `schemas/episode.json` called `assets/seasons/<season number>/episodes/<episode number>.json`. Note that the episode number must be two digits, so single digit episodes need a leading zero. Any fields where the values are lists can be filled in with names of queens in the season's `queens.txt` file. Some special cases are below:
+To add an episode to your league, make a copy of `schemas/episode.json` called `<episode number>.json` located in the `episodes_dir` of your season. Note that the episode number must be two digits, so single digit episodes need a leading zero. Any fields where the values are lists can be filled in with names of queens in the season's `queens.txt` file. Some special cases are below:
 - In the case of a lip sync smackdown, points are applied each time a queen's name is entered for winning a lip sync. Do not enter queens for having to lip sync for their life.
 - If there is a double sashay or a double shantay, the points are applied to all queens who have to lip sync for their life.
 - In the finale episode, set the `finale` field to `true`, fill in the winner and runners up, and place any queens who made it to the finale but did not advance to the final lip sync in the `queen_eliminated` field.
@@ -83,7 +79,6 @@ This does a similar thing to `publish.sh`, but instead of switching branches, it
 
 ## Roadmap
 - Split `create_league.py` into a script that creates and saves the league state, and one that reads that in to generate the plots and build the markdown file appropriately. This way the markdown file for each seaason should expect a fixed set of input arguments. In the future, it might be better to build using a Jupyter notebook or something like what Rmarkdown/knitr does so that the content is generated within the template.
-- Create a config file for each league/season. The config should include a different template for each season.
 - Figure out how to have pages for multiple leagues
 - Show exact events week-to-week for the queens
 - Create a plot that shows each person's total score grow from week-to-week

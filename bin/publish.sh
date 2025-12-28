@@ -1,7 +1,6 @@
 #!/bin/bash
 # This script builds the website and publishes it to GitHub Pages.
-# Some code generated with ChatGPT
-set -u
+set -ueo pipefail
 
 # Ensure clean working tree
 if ! git diff --quiet; then

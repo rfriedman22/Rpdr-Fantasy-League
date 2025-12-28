@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import argparse
+import yaml
 from glob import glob
 
 from commish.league import League
@@ -8,9 +9,8 @@ from commish import plotting
 
 
 parser = argparse.ArgumentParser(description="Create and analyze a fantasy league.")
-parser.add_argument("--season", type=str, help="Season identifier.", required=True)
 parser.add_argument(
-    "--use_small_scores", action="store_true", help="Use small scoring system."
+    "--season-config", type=str, help="Path to season config YAML file.", required=True
 )
 parser.add_argument("--debug", action="store_true", help="Enable debug mode.")
 parser.add_argument(
@@ -20,31 +20,25 @@ parser.add_argument(
     default="site-build",
 )
 args = parser.parse_args()
-season = args.season
 debug = args.debug
 output_dir = args.output_dir
 
-if args.use_small_scores:
-    event_scores_file = "small.tsv"
-else:
-    event_scores_file = "large.tsv"
+with open(args.season_config, "r") as f:
+    season_config = yaml.safe_load(f)
 
-# Set up the league
-season_dir = os.path.join("assets", "seasons", season)
-rules_dir = os.path.join("assets", "rules")
-queens_file = os.path.join(season_dir, "queens.txt")
-scoreboard_file = os.path.join(season_dir, "scoreboard.md")
-page_dir = os.path.join(output_dir, "seasons", season)
+season = season_config["season"]
+page_dir = os.path.join(output_dir, "seasons", str(season))
+
 league = League(
     season=season,
-    queens_file=queens_file,
-    contestant_file=os.path.join(season_dir, "contestants.tsv"),
-    rank_score_file=os.path.join(rules_dir, "rank_values", "final_four.tsv"),
-    event_scores_file=os.path.join(rules_dir, "event_scores", event_scores_file),
+    queens_file=season_config["queens"],
+    contestant_file=season_config["contestants"],
+    rank_score_file=season_config["rank_scores"],
+    event_scores_file=season_config["event_scores"],
 )
 
 # Add episodes
-episodes = sorted(glob(os.path.join(season_dir, "episodes", "*.json")))
+episodes = sorted(glob(os.path.join(season_config["episodes_dir"], "*.json")))
 for episode_file in episodes:
     league.add_episode(episode_file)
 
@@ -58,7 +52,7 @@ scores = scores.T.rename(
     }
 ).rename_axis("", axis="columns")
 
-with open(scoreboard_file, "r") as f:
+with open(season_config["scoreboard"], "r") as f:
     scoreboard_md = f.read()
 
 # The plots need to be in the same directory as the page for the website to build properly
