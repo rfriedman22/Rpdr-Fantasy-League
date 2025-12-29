@@ -66,10 +66,13 @@ rank_scores = rank_scores.rename(
     }
 ).rename_axis("Rank", axis="index")
 
+if "intro_text" not in season_config:
+    season_config["intro_text"] = ""
+
 context = {
     "season": season,
     "sections": sections,
-    "queen_names": league.cast.get_queens().index.tolist(),
+    "queen_names": league.cast.get_queens().index.sort_values().tolist(),
     "finished": league.cast.num_remaining_queens() == 0,
     "performance_rules": event_scores.to_markdown(),
     "rank_rules": rank_scores.to_markdown(),
