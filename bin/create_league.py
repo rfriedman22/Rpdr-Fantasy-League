@@ -3,6 +3,7 @@ import os
 import argparse
 import yaml
 from glob import glob
+from jinja2 import Environment, FileSystemLoader
 
 from commish.league import League
 from commish import plotting
@@ -28,6 +29,7 @@ with open(args.season_config, "r") as f:
 
 season = season_config["season"]
 page_dir = os.path.join(output_dir, "seasons", str(season))
+os.makedirs(page_dir, exist_ok=True)
 
 league = League(
     season=season,
@@ -43,24 +45,15 @@ for episode_file in episodes:
     league.add_episode(episode_file)
 
 # Set up the scoreboard page
-with open(season_config["scoreboard"], "r") as f:
-    scoreboard_md = f.read()
+env = Environment(loader=FileSystemLoader("templates"), autoescape=False)
+scoreboard_template = env.get_template("season.md.j2")
 
-# Tabular data
-queen_names = league.cast.get_queens().index.tolist()
-queen_names.sort()
-queen_names = ["- " + name for name in queen_names]
-queen_names = "\n".join(queen_names)
+has_started = league.episode_number > 0
+sections = {
+    "scoring": has_started,
+}
 
-scores = league.total_scores().sort_values("total_score", ascending=False)
-scores = scores.T.rename(
-    index={
-        "total_performance_score": "Performance Score",
-        "total_rank_score": "Rank Score",
-        "total_score": "Total Score",
-    }
-).rename_axis("", axis="columns")
-
+# Main scoreboard page
 event_scores = league.rules.get_event_scores()
 event_scores = event_scores.rename_axis("Event", axis="index").rename("Point Value")
 event_scores = event_scores.rename(lambda x: x.replace("_", " ").title())
@@ -73,41 +66,52 @@ rank_scores = rank_scores.rename(
     }
 ).rename_axis("Rank", axis="index")
 
-# The plots need to be in the same directory as the page for the website to build properly
-plots_dir = os.path.join(page_dir, "plots")
-os.makedirs(page_dir, exist_ok=True)
-os.makedirs(plots_dir, exist_ok=True)
+context = {
+    "season": season,
+    "sections": sections,
+    "queen_names": league.cast.get_queens().index.tolist(),
+    "finished": league.cast.num_remaining_queens() == 0,
+    "performance_rules": event_scores.to_markdown(),
+    "rank_rules": rank_scores.to_markdown(),
+    "captain_multiplier": league.rules.get_captain_multiplier(),
+}
 
-# Plots
-plot_functions = [
-    (plotting.plot_total_scores, "total_scores.png"),
-    (plotting.plot_total_scores_split, "stacked_total_scores.png"),
-    (plotting.plot_weekly_scores, "weekly_scores.png"),
-    (plotting.plot_rank_scores, "rank_scores.png"),
-    (plotting.plot_performance_scores, "weekly_performance_scores.png"),
-]
+# Scoring info
+if has_started:
+    scoring_context = {}
+    scores = league.total_scores().sort_values("total_score", ascending=False)
+    scores = scores.T.rename(
+        index={
+            "total_performance_score": "Performance Score",
+            "total_rank_score": "Rank Score",
+            "total_score": "Total Score",
+        }
+    ).rename_axis("", axis="columns")
+    scoring_context["scores_table"] = scores.to_markdown()
 
-for plot_func, filename in plot_functions:
-    fig = plot_func(league)
-    fig.savefig(os.path.join(plots_dir, filename))
+    # The plots need to be in the same directory as the page for the website to build properly
+    plots_dir = os.path.join(page_dir, "plots")
+    os.makedirs(page_dir, exist_ok=True)
+    os.makedirs(plots_dir, exist_ok=True)
 
-# Now when we make the page, the path needs to be relative to the page directory
-plots_dir = "plots"
-scoreboard_md = scoreboard_md.format(
-    season=season,
-    queen_names=queen_names,
-    performance_rules=event_scores.to_markdown(),
-    rank_rules=rank_scores.to_markdown(),
-    captain_multiplier=league.rules.get_captain_multiplier(),
-    scores_table=scores.to_markdown(),
-    total_scores_plot=os.path.join(plots_dir, "total_scores.png"),
-    stacked_total_scores_plot=os.path.join(plots_dir, "stacked_total_scores.png"),
-    weekly_scores_plot=os.path.join(plots_dir, "weekly_scores.png"),
-    rank_scores_plot=os.path.join(plots_dir, "rank_scores.png"),
-    weekly_performance_scores_plot=os.path.join(
-        plots_dir, "weekly_performance_scores.png"
-    ),
-)
+    # Plots
+    plot_functions = [
+        (plotting.plot_total_scores, "total_scores.png"),
+        (plotting.plot_total_scores_split, "stacked_total_scores.png"),
+        (plotting.plot_weekly_scores, "weekly_scores.png"),
+        (plotting.plot_rank_scores, "rank_scores.png"),
+        (plotting.plot_performance_scores, "weekly_performance_scores.png"),
+    ]
 
+    for plot_func, filename in plot_functions:
+        fig = plot_func(league)
+        fig.savefig(os.path.join(plots_dir, filename))
+        scoring_context_key = filename.replace(".png", "_plot")
+        # Now when we make the page, the path needs to be relative to the page directory
+        scoring_context[scoring_context_key] = os.path.join("plots", filename)
+
+    context["scoring"] = scoring_context
+
+# Render the page
 with open(os.path.join(page_dir, "index.md"), "w") as f:
-    f.write(scoreboard_md)
+    f.write(scoreboard_template.render(**context))

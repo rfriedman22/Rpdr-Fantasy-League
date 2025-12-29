@@ -1,0 +1,25 @@
+## Total Scores
+
+Here's how everybody {% if finished %}did{% else %}is doing{% endif %} overall this season:
+
+{{ scoring.scores_table }}
+
+![Total Scores]({{ scoring.total_scores_plot }})
+
+![Stacked Total Scores]({{ scoring.stacked_total_scores_plot }})
+
+## Rank Scores
+
+Here is how every queen finished and how many points they earned for each contestant in the league. Queens still in the competition are at the bottom:
+ß
+![Rank Scores]({{ scoring.rank_scores_plot }})
+
+## Performance Scores
+
+Here's how well everyone's team {% if finished %}did{% else %}is doing{% endif %} on a week-to-week basis:
+
+![Weekly Scores]({{ scoring.weekly_scores_plot }})
+
+Here is the breakdown of how each queen scored each week:
+
+![Weekly Performance Scores]({{ scoring.weekly_performance_scores_plot }})

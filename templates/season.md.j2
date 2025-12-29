@@ -1,0 +1,49 @@
+---
+title: Season {{ season }}
+---
+# RuPaul's Drag Race Season {{ season }} Fantasy League
+
+This is where the introductory text will go. This season's queens are:
+{% for queen in queen_names %}
+- {{ queen }}
+{% endfor %}
+
+## Scoring
+
+There are two ways to earn points: the **performance** of your team and the **rank** of each queen.
+
+### Performances
+
+Each week, you gain or lose points when the following things happen to your team member:
+
+{{ performance_rules }}
+
+Points have {{ captain_multiplier }} times greater value for your captain.
+
+In a lip sync smackdown, points are earned each time a queen wins a lip sync, but no points are deducted for a queen being eliminated from the bracket.
+
+### Ranks
+
+Based on how a queen ranks, they will earn a select number of points. Those points will be multiplied by the point value of the rank assigned in the team selection.
+
+**Note:** This scoring system assumes a final four and no double sashays. In a final four, third and fourth place are worth the same. The teammate you think will be runner-up is worth slightly more than the third teammate. Rules will be adjusted if needed.
+
+{{ rank_rules }}
+
+#### Example
+
+- Team 1 ranks Jinkx 12th
+- Team 2 ranks Jinkx 5th
+- Team 3 ranks Jinkx as their captain
+
+Jinkx finishes in 4th, so she is worth 13 points. Then:
+{# This assumes a final four and no double sashays and is not dynamic to other rules #}
+- Team 1 earns 3 x 13 = 39 points
+- Team 2 earns 10 x 13 = 130 points
+- Team 3 earns 25 x 13 = 325 points
+
+{% if sections.scoring %}
+{% include "sections/scoring.md.j2" %}
+{% else %}
+**Scoring will be updated here as the season progresses.**
+{% endif %}
