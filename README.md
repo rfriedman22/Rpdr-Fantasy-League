@@ -15,9 +15,15 @@ Build a season:
 python3 bin/create_league.py --season-config season-configs/17.yml
 ```
 
-This will build a webpage reporting the state of the league. It expects a file formatted like the one in `schemas/season-config.yml`, which should contain the season number, the path to several files, and a directory containing json files numbered `01.json`, `02.json`, etc. following the pattern in `schemas/episode.json`.
+This script expects a file formatted like the one in `schemas/season-config.yml`, which should contain:
+- The season number
+- The path to several files, including the queens, the contestant submissions, and rulesets
+- The path to a directory containing json files numbered `01.json`, `02.json`, etc. following the pattern in `schemas/episode.json`
+- Any introductory text about the league
 
-There are multiple rulesets provided in `assets/rules/`:
+It will output a markdown file that can be rendered as a webpage using Jekyll or similar tools. The file is generated using Jinja2 following the templates in `templates/`.
+
+There are multiple predefined rulesets provided in `assets/rules/`:
 - `event_scores` contain the large and small rules for events like tops and bottoms of the week.
 - `rank_values` contain the ranks values for a final three or final four situation.
 
@@ -69,7 +75,7 @@ There is a template for the website located in `site-template`. To publish the s
 ```sh
 sh bin/publish.sh
 ```
-This script starts by creating a temporary copy of `site-template` in a directory called `site-build`. Then it uses Jinja2 builds the league pages into this directory. Next it will switch to the `gh-pages`, move all the files out of the build, and remove the directory. Finally, it will commit and push to `gh-pages` before switching back to `main`.
+This script starts by creating a temporary copy of `site-template` in a directory called `site-build`. Then it runs `create_league.py` for each YAML file in `season-configs`. Next it will switch to the `gh-pages`, move all the files out of the build, and remove the directory. Finally, it will commit and push to `gh-pages` before switching back to `main`.
 
 You can test a local copy first by running:
 ```sh
@@ -78,7 +84,7 @@ sh bin/build_local.sh
 This does a similar thing to `publish.sh`, but instead of switching branches, it will launch a local server so you can preview the website.
 
 ## Roadmap
-- Build across multiple leagues
+- Build website for multiple seasons
 - Show exact events week-to-week for the queens
 - Create a plot that shows each person's total score grow from week-to-week
 - Add an event for a second chance (queen is eliminated and comes back). Have a point value for this event. Have system to update queen ranks when someone is uneliminated.
