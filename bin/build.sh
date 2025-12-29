@@ -11,4 +11,4 @@ PUBLISH_DIR="$1"
 rm -rf "${PUBLISH_DIR}"
 cp -r site-template "${PUBLISH_DIR}"
 
-python3 bin/create_league.py --season-config season-configs/17.yaml  --output_dir "${PUBLISH_DIR}"
+python3 bin/create_league.py --season-config season-configs/17.yml  --output_dir "${PUBLISH_DIR}"

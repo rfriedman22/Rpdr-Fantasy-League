@@ -3,7 +3,11 @@ title: Season {{ season }}
 ---
 # RuPaul's Drag Race Season {{ season }} Fantasy League
 
-This is where the introductory text will go. This season's queens are:
+{% if intro_text %}
+{{ intro_text }}
+{% endif %}
+
+This season's queens are:
 {% for queen in queen_names %}
 - {{ queen }}
 {% endfor %}

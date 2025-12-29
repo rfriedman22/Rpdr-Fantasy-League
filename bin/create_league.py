@@ -74,6 +74,7 @@ context = {
     "performance_rules": event_scores.to_markdown(),
     "rank_rules": rank_scores.to_markdown(),
     "captain_multiplier": league.rules.get_captain_multiplier(),
+    "intro_text": season_config["intro_text"],
 }
 
 # Scoring info
