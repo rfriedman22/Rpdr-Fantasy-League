@@ -1,0 +1,7 @@
+season: 17
+queens: "assets/seasons/17/queens.txt"
+contestants: "assets/seasons/17/contestants.tsv"
+rank_scores: "assets/rules/rank_values/final_four.tsv"
+event_scores: "assets/rules/event_scores/small.tsv"
+episodes_dir: "assets/seasons/17/episodes/"
+scoreboard: "assets/seasons/17/scoreboard.md"
