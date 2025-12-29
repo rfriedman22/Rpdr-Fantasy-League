@@ -6,6 +6,6 @@ setup(
     description="Fantasy league management for RuPaul's Drag Race",
     author="Ryan Z Friedman",
     packages=["commish"],
-    install_requires=["pandas", "numpy", "matplotlib", "tabulate", "pyyaml"],
+    install_requires=["pandas", "numpy", "matplotlib", "tabulate", "pyyaml", "jinja2"],
     python_requires=">=3.7",
 )

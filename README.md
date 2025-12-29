@@ -79,8 +79,7 @@ This does a similar thing to `publish.sh`, but instead of switching branches, it
 
 ## Roadmap
 - Split `create_league.py` into a script that creates and saves the league state, and one that reads that in to generate the plots and build the markdown file appropriately. This way the markdown file for each seaason should expect a fixed set of input arguments. It can also handle the case where there have not been any weeks added to the league yet by not rendering any plots or tabular data. In the future, it might be better to build using a Jupyter notebook or something like what Rmarkdown/knitr does so that the content is generated within the template.
-- Figure out how to have pages for multiple leagues
 - Show exact events week-to-week for the queens
 - Create a plot that shows each person's total score grow from week-to-week
 - Add an event for a second chance (queen is eliminated and comes back). Have a point value for this event. Have system to update queen ranks when someone is uneliminated.
-- Share before next All Stars, testing on this season with my league
+- Set v1.0.0 at end of season, share before next All Stars
