@@ -19,7 +19,7 @@
 
             <div class="trigger">
                 {% for item in site.data.navigation %}
-                <a href="{{ item.url }}" class="page-link">
+                <a href="{{ site.url }}{{ item.url }}" class="page-link">
                     {{ item.name | escape }}
                 </a>
                 {% endfor %}
