@@ -3,4 +3,4 @@
 set -ueo pipefail
 PUBLISH_DIR="site-build"
 sh bin/build.sh "${PUBLISH_DIR}"
-BUNDLE_GEMFILE="${PUBLISH_DIR}/Gemfile" bundle exec jekyll serve --source "${PUBLISH_DIR}"
+sh bin/run_local.sh "${PUBLISH_DIR}"
