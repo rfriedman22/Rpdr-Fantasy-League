@@ -3,4 +3,6 @@
 set -ueo pipefail
 PUBLISH_DIR="site-build"
 sh bin/build.sh "${PUBLISH_DIR}"
+# The base URL of the website is different on localhost
+sed -i '' 's|^site: .*$|site: |' "${PUBLISH_DIR}"/_data/urls.yml
 sh bin/run_local.sh "${PUBLISH_DIR}"
