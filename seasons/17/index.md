@@ -3,9 +3,26 @@ title: Season 17
 ---
 # RuPaul's Drag Race Season 17 Fantasy League
 
+
 This is the fantasy league for RuPaul's Drag Race I ran for some friends. I ran it out of Google Sheets, but it was kind of a pain to maintain that way, so I decided to make myself an app to manage the scoring for me. I've tested it out by recreating the league from this season.
 
-Right now, the scoring information is with an updated rules set I'm using for next season. It doesn't change the results, but it's not the same rules as what actually went down. Once I set things up for the upcoming season and work out the website a little bit more, I'll revert this season to the scoring system that was used at the time.
+
+This season's queens are:
+- Acacia Forgot
+- Arrietty
+- Crystal Envy
+- Hormona Lisa
+- Jewels Sparkles
+- Joella
+- Kori King
+- Lana Ja'Rae
+- Lexi Love
+- Lucky Starzzz
+- Lydia B Kolins
+- Onya Nurve
+- Sam Star
+- Suzie Toot
+
 
 ## Scoring
 
@@ -17,19 +34,19 @@ Each week, you gain or lose points when the following things happen to your team
 
 | Event                   |   Point Value |
 |:------------------------|--------------:|
-| Tops                    |            25 |
-| Win Main Challenge      |            30 |
-| Bottoms                 |           -15 |
-| Lip Sync For Your Life  |           -15 |
-| Lip Sync Winner         |            10 |
-| Win Mini Challenge      |            15 |
-| Double Sashay           |           -30 |
-| Double Shantay          |            30 |
-| Runway Malfunction      |           -15 |
-| Wig Reveal              |            15 |
-| Lip Sync Malfunction    |           -15 |
-| Miss Congeniality       |           100 |
-| Wins Lip Sync Smackdown |            60 |
+| Tops                    |            10 |
+| Win Main Challenge      |            15 |
+| Bottoms                 |            -5 |
+| Lip Sync For Your Life  |           -10 |
+| Lip Sync Winner         |             5 |
+| Win Mini Challenge      |            10 |
+| Double Sashay           |           -15 |
+| Double Shantay          |            15 |
+| Runway Malfunction      |            -5 |
+| Wig Reveal              |             5 |
+| Lip Sync Malfunction    |            -5 |
+| Miss Congeniality       |            50 |
+| Wins Lip Sync Smackdown |            30 |
 
 Points have 2 times greater value for your captain.
 
@@ -65,19 +82,21 @@ Based on how a queen ranks, they will earn a select number of points. Those poin
 - Team 3 ranks Jinkx as their captain
 
 Jinkx finishes in 4th, so she is worth 13 points. Then:
+
 - Team 1 earns 3 x 13 = 39 points
 - Team 2 earns 10 x 13 = 130 points
 - Team 3 earns 25 x 13 = 325 points
+
 
 ## Total Scores
 
 Here's how everybody did overall this season:
 
-|                   |   Kolin |   Brie |   Jourdan |   Olivia |   Joshua |   Emilee |   Ryan |
-|:------------------|--------:|-------:|----------:|---------:|---------:|---------:|-------:|
-| Performance Score |    1035 |    885 |       665 |      285 |      525 |      315 |     95 |
-| Rank Score        |    1541 |   1380 |      1121 |     1168 |      823 |      951 |   1069 |
-| Total Score       |    2576 |   2265 |      1786 |     1453 |     1348 |     1266 |   1164 |
+|                   |   Kolin |   Brie |   Jourdan |   Olivia |   Ryan |   Emilee |   Joshua |
+|:------------------|--------:|-------:|----------:|---------:|-------:|---------:|---------:|
+| Performance Score |     460 |    390 |       300 |      130 |     50 |      135 |      220 |
+| Rank Score        |    1541 |   1380 |      1121 |     1168 |   1069 |      951 |      823 |
+| Total Score       |    2001 |   1770 |      1421 |     1298 |   1119 |     1086 |     1043 |
 
 ![Total Scores](plots/total_scores.png)
 
@@ -85,8 +104,8 @@ Here's how everybody did overall this season:
 
 ## Rank Scores
 
-Here is how every queen finished and how many points they earned for each contestant in the league:
-
+Here is how every queen finished and how many points they earned for each contestant in the league. Queens still in the competition are at the bottom:
+ß
 ![Rank Scores](plots/rank_scores.png)
 
 ## Performance Scores
