@@ -19,7 +19,12 @@
 
             <div class="trigger">
                 {% for item in site.data.navigation %}
-                <a href="{{ site.data.urls.site }}{{ item.url }}" class="page-link">{{ item.name | escape }}</a>
+                    <!-- If this is an absolute URL, do not prepend the site URL -->
+                    {% if item.url contains '://' %}
+                        <a href="{{ item.url }}" class="page-link">{{ item.name | escape }}</a>
+                    {% else %}
+                        <a href="{{ site.data.urls.site }}{{ item.url }}" class="page-link">{{ item.name | escape }}</a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </nav>
