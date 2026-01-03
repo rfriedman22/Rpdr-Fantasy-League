@@ -3,6 +3,7 @@ import os
 import argparse
 import yaml
 from glob import glob
+import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 
 from commish.league import League
@@ -69,6 +70,21 @@ rank_scores = rank_scores.rename(
 if "intro_text" not in season_config:
     season_config["intro_text"] = ""
 
+rankings = league.contestants.get_queen_rankings()
+rankings = (
+    pd.concat(rankings.values, keys=rankings.index)
+    .reset_index(level="name")
+    .reset_index(drop=True)
+)
+teams_table = rankings.pivot(index="rank", columns="name", values="queen")
+teams_table = teams_table.rename_axis("Rank", axis="index").rename_axis(
+    "", axis="columns"
+)
+teams_table = teams_table.rename(
+    index={1: "Winner (Captain)", 2: "Runner-up (Teammate)", 3: "3rd (Teammate)"}
+)
+
+
 context = {
     "season": season,
     "sections": sections,
@@ -78,6 +94,7 @@ context = {
     "rank_rules": rank_scores.to_markdown(),
     "captain_multiplier": league.rules.get_captain_multiplier(),
     "intro_text": season_config["intro_text"],
+    "teams_table": teams_table.to_markdown(),
 }
 
 # Scoring info
