@@ -64,6 +64,7 @@ class Contestants:
             names=names,
             skiprows=1,
             index_col="name",
+            comment="#",
         )
         contestants = pd.Series(
             {

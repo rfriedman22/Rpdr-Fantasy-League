@@ -119,6 +119,8 @@ class League:
             )
             .fillna(0)
             .astype(int)
+            # Backfill any queens not on the scoreboard
+            .reindex(self.cast.get_queens().index, fill_value=0)
         )
         return performance_scores
 
