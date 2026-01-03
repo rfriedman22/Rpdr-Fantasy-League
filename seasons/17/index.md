@@ -87,6 +87,27 @@ Jinkx finishes in 4th, so she is worth 13 points. Then:
 - Team 2 earns 10 x 13 = 130 points
 - Team 3 earns 25 x 13 = 325 points
 
+## Teams
+
+This is how everybody ranked the queens this season:
+
+| Rank                 | Brie            | Emilee          | Joshua          | Jourdan         | Kolin           | Olivia          | Ryan            |
+|:---------------------|:----------------|:----------------|:----------------|:----------------|:----------------|:----------------|:----------------|
+| Winner (Captain)     | Lexi Love       | Lucky Starzzz   | Crystal Envy    | Suzie Toot      | Onya Nurve      | Kori King       | Kori King       |
+| Runner-up (Teammate) | Onya Nurve      | Sam Star        | Hormona Lisa    | Lydia B Kolins  | Lexi Love       | Sam Star        | Lucky Starzzz   |
+| 3rd (Teammate)       | Sam Star        | Crystal Envy    | Sam Star        | Lexi Love       | Sam Star        | Suzie Toot      | Onya Nurve      |
+| 4                    | Suzie Toot      | Suzie Toot      | Arrietty        | Jewels Sparkles | Jewels Sparkles | Onya Nurve      | Arrietty        |
+| 5                    | Jewels Sparkles | Arrietty        | Acacia Forgot   | Hormona Lisa    | Kori King       | Arrietty        | Sam Star        |
+| 6                    | Kori King       | Onya Nurve      | Suzie Toot      | Acacia Forgot   | Arrietty        | Hormona Lisa    | Lexi Love       |
+| 7                    | Lana Ja'Rae     | Acacia Forgot   | Lucky Starzzz   | Kori King       | Suzie Toot      | Lexi Love       | Suzie Toot      |
+| 8                    | Hormona Lisa    | Kori King       | Kori King       | Joella          | Lana Ja'Rae     | Lana Ja'Rae     | Crystal Envy    |
+| 9                    | Crystal Envy    | Jewels Sparkles | Lydia B Kolins  | Arrietty        | Acacia Forgot   | Lucky Starzzz   | Acacia Forgot   |
+| 10                   | Acacia Forgot   | Hormona Lisa    | Lexi Love       | Onya Nurve      | Crystal Envy    | Crystal Envy    | Joella          |
+| 11                   | Lucky Starzzz   | Lydia B Kolins  | Jewels Sparkles | Sam Star        | Lydia B Kolins  | Jewels Sparkles | Hormona Lisa    |
+| 12                   | Joella          | Joella          | Joella          | Lana Ja'Rae     | Lucky Starzzz   | Lydia B Kolins  | Lydia B Kolins  |
+| 13                   | Arrietty        | Lexi Love       | Lana Ja'Rae     | Lucky Starzzz   | Hormona Lisa    | Joella          | Jewels Sparkles |
+| 14                   | Lydia B Kolins  | Lana Ja'Rae     | Onya Nurve      | Crystal Envy    | Joella          | Acacia Forgot   | Lana Ja'Rae     |
+
 
 ## Total Scores
 

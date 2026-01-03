@@ -21,7 +21,7 @@ This season's queens are:
 - Mia Starr
 - Myki Meeks
 - Nini Coco
-- Vita VonTeese Star
+- Vita VonTesse Starr
 
 
 ## Scoring
@@ -87,5 +87,54 @@ Jinkx finishes in 4th, so she is worth 13 points. Then:
 - Team 2 earns 10 x 13 = 130 points
 - Team 3 earns 25 x 13 = 325 points
 
+## Teams
 
-**Scoring will be updated here as the season progresses.**
+This is how everybody ranked the queens this season:
+
+| Rank                 | Austin              | Brie                | Bryan               | Emilee              | Jacob               | Josh                | Jourdan             | Kolin               | Mom                 | Olivia              | Ryan                | Ty                  |
+|:---------------------|:--------------------|:--------------------|:--------------------|:--------------------|:--------------------|:--------------------|:--------------------|:--------------------|:--------------------|:--------------------|:--------------------|:--------------------|
+| Winner (Captain)     | Athena Dion         | Nini Coco           | Juicy Love Dion     | Athena Dion         | Jane Don't          | Jane Don't          | DD Fuego            | Athena Dion         | Mandy Mango         | Myki Meeks          | Jane Don't          | Jane Don't          |
+| Runner-up (Teammate) | Jane Don't          | Jane Don't          | Athena Dion         | Mia Starr           | Kenya Pleaser       | Ciara Myst          | Ciara Myst          | Nini Coco           | Myki Meeks          | Jane Don't          | Discord Addams      | Kenya Pleaser       |
+| 3rd (Teammate)       | Kenya Pleaser       | Darlene Mitchell    | Nini Coco           | Nini Coco           | Mia Starr           | Athena Dion         | Darlene Mitchell    | Mandy Mango         | DD Fuego            | Darlene Mitchell    | Kenya Pleaser       | Nini Coco           |
+| 4                    | Ciara Myst          | Athena Dion         | Jane Don't          | Discord Addams      | Ciara Myst          | Mia Starr           | Mandy Mango         | Vita VonTesse Starr | Athena Dion         | Juicy Love Dion     | Nini Coco           | DD Fuego            |
+| 5                    | Discord Addams      | Juicy Love Dion     | DD Fuego            | Vita VonTesse Starr | Discord Addams      | Briar Blush         | Myki Meeks          | Jane Don't          | Mia Starr           | Nini Coco           | Athena Dion         | Ciara Myst          |
+| 6                    | Juicy Love Dion     | Myki Meeks          | Kenya Pleaser       | Juicy Love Dion     | Briar Blush         | Discord Addams      | Kenya Pleaser       | Mia Starr           | Jane Don't          | Kenya Pleaser       | DD Fuego            | Athena Dion         |
+| 7                    | Myki Meeks          | Vita VonTesse Starr | Ciara Myst          | Myki Meeks          | Athena Dion         | Darlene Mitchell    | Mia Starr           | Ciara Myst          | Discord Addams      | Athena Dion         | Vita VonTesse Starr | Juicy Love Dion     |
+| 8                    | Mandy Mango         | Kenya Pleaser       | Mandy Mango         | Mandy Mango         | Juicy Love Dion     | Vita VonTesse Starr | Vita VonTesse Starr | Myki Meeks          | Juicy Love Dion     | Mia Starr           | Myki Meeks          | Briar Blush         |
+| 9                    | Briar Blush         | Discord Addams      | Vita VonTesse Starr | Briar Blush         | Myki Meeks          | Juicy Love Dion     | Discord Addams      | Briar Blush         | Briar Blush         | Vita VonTesse Starr | Juicy Love Dion     | Discord Addams      |
+| 10                   | Nini Coco           | Mia Starr           | Myki Meeks          | Kenya Pleaser       | Vita VonTesse Starr | Myki Meeks          | Juicy Love Dion     | Discord Addams      | Darlene Mitchell    | Ciara Myst          | Mandy Mango         | Myki Meeks          |
+| 11                   | Mia Starr           | Briar Blush         | Discord Addams      | Ciara Myst          | Darlene Mitchell    | Kenya Pleaser       | Jane Don't          | Kenya Pleaser       | Vita VonTesse Starr | Briar Blush         | Mia Starr           | Mia Starr           |
+| 12                   | Darlene Mitchell    | Ciara Myst          | Briar Blush         | Jane Don't          | Nini Coco           | Mandy Mango         | Athena Dion         | Juicy Love Dion     | Kenya Pleaser       | Discord Addams      | Briar Blush         | Darlene Mitchell    |
+| 13                   | Vita VonTesse Starr | Mandy Mango         | Mia Starr           | DD Fuego            | Mandy Mango         | DD Fuego            | Nini Coco           | DD Fuego            | Ciara Myst          | Mandy Mango         | Darlene Mitchell    | Vita VonTesse Starr |
+| 14                   | DD Fuego            | DD Fuego            | Darlene Mitchell    | Darlene Mitchell    | DD Fuego            | Nini Coco           | Briar Blush         | Darlene Mitchell    | Nini Coco           | DD Fuego            | Ciara Myst          | Mandy Mango         |
+
+
+## Total Scores
+
+Here's how everybody is doing overall this season:
+
+|                   |   Brie |   Ty |   Bryan |   Emilee |   Kolin |   Josh |   Jacob |   Olivia |   Ryan |   Austin |   Jourdan |   Mom |
+|:------------------|-------:|-----:|--------:|---------:|--------:|-------:|--------:|---------:|-------:|---------:|----------:|------:|
+| Performance Score |    125 |   70 |      55 |       55 |      40 |     30 |      15 |       15 |     15 |        0 |         0 |   -30 |
+| Rank Score        |      0 |    0 |       0 |        0 |       0 |      0 |       0 |        0 |      0 |        0 |         0 |     0 |
+| Total Score       |    125 |   70 |      55 |       55 |      40 |     30 |      15 |       15 |     15 |        0 |         0 |   -30 |
+
+![Total Scores](plots/total_scores.png)
+
+![Stacked Total Scores](plots/stacked_total_scores.png)
+
+## Rank Scores
+
+Here is how every queen finished and how many points they earned for each contestant in the league. Queens still in the competition are at the bottom:
+ß
+![Rank Scores](plots/rank_scores.png)
+
+## Performance Scores
+
+Here's how well everyone's team is doing on a week-to-week basis:
+
+![Weekly Scores](plots/weekly_scores.png)
+
+Here is the breakdown of how each queen scored each week:
+
+![Weekly Performance Scores](plots/weekly_performance_scores.png)
