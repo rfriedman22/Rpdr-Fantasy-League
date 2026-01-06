@@ -50,6 +50,8 @@ Each week, you gain or lose points when the following things happen to your team
 
 Points have 2 times greater value for your captain.
 
+The Tops and Bottoms of the week are determined based on who gets critiqued. This is usually six queens, but near the end of the show it will be fewer.
+
 In a lip sync smackdown, points are earned each time a queen wins a lip sync, but no points are deducted for a queen being eliminated from the bracket.
 
 ### Ranks
@@ -113,11 +115,11 @@ This is how everybody ranked the queens this season:
 
 Here's how everybody is doing overall this season:
 
-|                   |   Brie |   Ty |   Bryan |   Emilee |   Kolin |   Josh |   Jacob |   Olivia |   Ryan |   Austin |   Jourdan |   Mom |
-|:------------------|-------:|-----:|--------:|---------:|--------:|-------:|--------:|---------:|-------:|---------:|----------:|------:|
-| Performance Score |    125 |   70 |      55 |       55 |      40 |     30 |      15 |       15 |     15 |        0 |         0 |   -30 |
-| Rank Score        |      0 |    0 |       0 |        0 |       0 |      0 |       0 |        0 |      0 |        0 |         0 |     0 |
-| Total Score       |    125 |   70 |      55 |       55 |      40 |     30 |      15 |       15 |     15 |        0 |         0 |   -30 |
+|                   |   Brie |   Ty |   Josh |   Jacob |   Ryan |   Emilee |   Kolin |   Olivia |   Austin |   Bryan |   Jourdan |   Mom |
+|:------------------|-------:|-----:|-------:|--------:|-------:|---------:|--------:|---------:|---------:|--------:|----------:|------:|
+| Performance Score |    150 |  120 |     80 |      65 |     65 |       55 |      40 |       40 |       25 |      25 |         0 |   -30 |
+| Rank Score        |      0 |    0 |      0 |       0 |      0 |        0 |       0 |        0 |        0 |       0 |         0 |     0 |
+| Total Score       |    150 |  120 |     80 |      65 |     65 |       55 |      40 |       40 |       25 |      25 |         0 |   -30 |
 
 ![Total Scores](plots/total_scores.png)
 
