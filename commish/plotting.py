@@ -3,46 +3,84 @@ import matplotlib.colors as mcolors
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 
-def plot_total_scores(league):
+def plot_total_scores(league, horizontal=True):
     """Plot total scores for each contestant as a bar chart."""
-    scores = league.total_scores().sort_values("total_score", ascending=False)
+    scores = league.total_scores()
     fig, ax = plt.subplots()
-    bars = ax.bar(scores.index, scores["total_score"])
-    ax.set_ylabel("Score")
-    # Add text labels above each bar
-    for bar, value in zip(bars, scores["total_score"]):
-        ax.text(
-            bar.get_x() + bar.get_width() / 2,
-            bar.get_height(),
-            f"{value}",
-            ha="center",
-            va="bottom",
-        )
+    if horizontal:
+        scores = scores.sort_values("total_score", ascending=True)
+        bars = ax.barh(scores.index, scores["total_score"])
+        # Add text labels beside each bar
+        for bar, value in zip(bars, scores["total_score"]):
+            ax.text(
+                bar.get_width(),
+                bar.get_y() + bar.get_height() / 2,
+                f"{value}",
+                ha="left",
+                va="center",
+            )
+        ax.set_xlabel("Score")
+    else:
+        scores = scores.sort_values("total_score", ascending=False)
+        bars = ax.bar(scores.index, scores["total_score"])
+        # Add text labels above each bar
+        for bar, value in zip(bars, scores["total_score"]):
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                bar.get_height(),
+                f"{value}",
+                ha="center",
+                va="bottom",
+            )
+        ax.set_ylabel("Score")
+        ax.tick_params(axis="x", rotation=45)
     return fig
 
 
-def plot_total_scores_split(league):
+def plot_total_scores_split(league, horizontal=True):
     """Plot total scores split into rank and performance scores as a stacked bar chart."""
-    scores = league.total_scores().sort_values("total_score", ascending=False)
+    scores = league.total_scores()
     fig, ax = plt.subplots()
-    bars1 = ax.bar(scores.index, scores["total_rank_score"], label="Rank Score")
-    bars2 = ax.bar(
-        scores.index,
-        scores["total_performance_score"],
-        bottom=scores["total_rank_score"],
-        label="Performance Score",
-    )
-    ax.set_ylabel("Score")
-    # Add text labels above each bar
-    for b1, b2, value in zip(bars1, bars2, scores["total_score"]):
-        ax.text(
-            b1.get_x() + b1.get_width() / 2,
-            b1.get_height() + b2.get_height(),
-            f"{value}",
-            ha="center",
-            va="bottom",
+    if horizontal:
+        scores = scores.sort_values("total_score", ascending=True)
+        bars1 = ax.barh(scores.index, scores["total_rank_score"], label="Rank Score")
+        bars2 = ax.barh(
+            scores.index,
+            scores["total_performance_score"],
+            left=scores["total_rank_score"],
+            label="Performance Score",
         )
-    ax.legend(loc="lower left")
+        ax.set_xlabel("Score")
+        # Add text labels beside each bar
+        for b1, b2, value in zip(bars1, bars2, scores["total_score"]):
+            ax.text(
+                b1.get_width() + b2.get_width(),
+                b1.get_y() + b1.get_height() / 2,
+                f"{value}",
+                ha="left",
+                va="center",
+            )
+        ax.legend(loc="upper left")
+    else:
+        scores = scores.sort_values("total_score", ascending=False)
+        bars1 = ax.bar(scores.index, scores["total_rank_score"], label="Rank Score")
+        bars2 = ax.bar(
+            scores.index,
+            scores["total_performance_score"],
+            bottom=scores["total_rank_score"],
+            label="Performance Score",
+        )
+        ax.set_ylabel("Score")
+        # Add text labels above each bar
+        for b1, b2, value in zip(bars1, bars2, scores["total_score"]):
+            ax.text(
+                b1.get_x() + b1.get_width() / 2,
+                b1.get_height() + b2.get_height(),
+                f"{value}",
+                ha="center",
+                va="bottom",
+            )
+        ax.legend(loc="lower left")
     return fig
 
 
@@ -52,8 +90,12 @@ def plot_weekly_scores(league):
     totals = scores.sum(axis=1).sort_values()
     scores = scores.loc[totals.index[::-1]]
 
-    fig, ax = plt.subplots()
-    # Draw the heatmap
+    n_contestants, n_episodes = scores.shape
+    heatmap_pixel_size = 0.24
+    width1 = 1.15 + heatmap_pixel_size * n_episodes  # Width of heatmap in inches
+    width2 = 1.0  # Width of barplot
+
+    fig, ax = plt.subplots(figsize=(6.4, 4.8))
     heatmap = ax.imshow(
         scores,
         aspect="equal",
@@ -67,7 +109,7 @@ def plot_weekly_scores(league):
     annotate_heatmap(ax, scores)
 
     # Add barplot of total performance scores to the right
-    ax2 = add_axes(ax, "right")
+    ax2 = add_axes(ax, "right", size=f"{width2 / width1 * 100:.1f}%")
     bars = ax2.barh(scores.index, totals)
     ax2.set_xticks([0, max(totals)])
     ax2.set_yticks([])
@@ -100,7 +142,12 @@ def plot_performance_scores(league):
     totals = scores.sum(axis=1).sort_values()
     scores = scores.loc[totals.index[::-1]]
 
-    fig, ax = plt.subplots()
+    n_queens, n_episodes = scores.shape
+    heatmap_pixel_size = 0.24
+    width1 = 1.15 + heatmap_pixel_size * n_episodes  # Width of heatmap in inches
+    width2 = 1.0  # Width of barplot
+
+    fig, ax = plt.subplots(figsize=(6.4, 4.8))
     # Draw the heatmap
     heatmap = ax.imshow(
         scores,
@@ -115,7 +162,7 @@ def plot_performance_scores(league):
     annotate_heatmap(ax, scores)
 
     # Add barplot of total performance scores to the right
-    ax2 = add_axes(ax, "right")
+    ax2 = add_axes(ax, "right", size=f"{width2 / width1 * 100:.1f}%")
     bars = ax2.barh(scores.index, totals)
     ax2.set_xticks([min(totals), max(totals)])
     ax2.set_yticks([])
