@@ -24,6 +24,14 @@ This season's queens are:
 - Vita VonTesse Starr
 
 
+Jump to a section:
+- [Scoring](#scoring)
+- [Teams](#teams)
+- [Total Scores](#total-scores)
+- [Rank Scores](#rank-scores)
+- [Performance Scores](#performance-scores)
+
+
 ## Scoring
 
 There are two ways to earn points: the **performance** of your team and the **rank** of each queen.
