@@ -1,0 +1,42 @@
+{
+    "episode": 2,
+    "finale": false,
+    "queen_eliminated": ["DD Fuego"],
+    "performance": {
+        "tops": [
+            "Jane Don't",
+            "Mia Starr"
+        ],
+        "win_main_challenge": [
+            "Jane Don't"
+        ],
+        "bottoms": [
+            "DD Fuego",
+            "Mandy Mango",
+            "Athena Dion",
+            "Darlene Mitchell"
+        ],
+        "lip_sync_for_your_life": [
+            "DD Fuego",
+            "Mandy Mango"
+        ],
+        "lip_sync_winner": [
+            "Mandy Mango"
+        ],
+        "win_mini_challenge": [
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [
+            "Mandy Mango"
+        ],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
