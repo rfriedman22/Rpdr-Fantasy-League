@@ -115,11 +115,11 @@ This is how everybody ranked the queens this season:
 
 Here's how everybody is doing overall this season:
 
-|                   |   Brie |   Ty |   Josh |   Jacob |   Ryan |   Emilee |   Kolin |   Olivia |   Austin |   Bryan |   Jourdan |   Mom |
-|:------------------|-------:|-----:|-------:|--------:|-------:|---------:|--------:|---------:|---------:|--------:|----------:|------:|
-| Performance Score |    150 |  120 |     80 |      65 |     65 |       55 |      40 |       40 |       25 |      25 |         0 |   -30 |
-| Rank Score        |      0 |    0 |      0 |       0 |      0 |        0 |       0 |        0 |        0 |       0 |         0 |     0 |
-| Total Score       |    150 |  120 |     80 |      65 |     65 |       55 |      40 |       40 |       25 |      25 |         0 |   -30 |
+|                   |   Ty |   Jacob |   Brie |   Ryan |   Josh |   Olivia |   Emilee |   Austin |   Bryan |   Kolin |   Jourdan |   Mom |
+|:------------------|-----:|--------:|-------:|-------:|-------:|---------:|---------:|---------:|--------:|--------:|----------:|------:|
+| Performance Score |  230 |     200 |    190 |    175 |    175 |       80 |       50 |       50 |      10 |     -25 |       -75 |  -130 |
+| Rank Score        |   12 |       1 |      1 |      9 |      2 |        1 |        2 |        1 |      10 |       2 |        25 |    14 |
+| Total Score       |  242 |     201 |    191 |    184 |    177 |       81 |       52 |       51 |      20 |     -23 |       -50 |  -116 |
 
 ![Total Scores](plots/total_scores.png)
 
@@ -128,7 +128,7 @@ Here's how everybody is doing overall this season:
 ## Rank Scores
 
 Here is how every queen finished and how many points they earned for each contestant in the league. Queens still in the competition are at the bottom:
-ß
+
 ![Rank Scores](plots/rank_scores.png)
 
 ## Performance Scores
