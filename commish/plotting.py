@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 from mpl_toolkits.axes_grid1 import make_axes_locatable
+import numpy as np
 
 
 def plot_total_scores(league, horizontal=True):
@@ -20,6 +21,8 @@ def plot_total_scores(league, horizontal=True):
                 va="center",
             )
         ax.set_xlabel("Score")
+        if min(scores["total_score"]) < 0:
+            ax.axvline(0, color="black", linewidth=0.8)
     else:
         scores = scores.sort_values("total_score", ascending=False)
         bars = ax.bar(scores.index, scores["total_score"])
@@ -34,6 +37,8 @@ def plot_total_scores(league, horizontal=True):
             )
         ax.set_ylabel("Score")
         ax.tick_params(axis="x", rotation=45)
+        if min(scores["total_score"]) < 0:
+            ax.axhline(0, color="black", linewidth=0.8)
     return fig
 
 
@@ -43,13 +48,13 @@ def plot_total_scores_split(league, horizontal=True):
     fig, ax = plt.subplots()
     if horizontal:
         scores = scores.sort_values("total_score", ascending=True)
-        bars1 = ax.barh(scores.index, scores["total_rank_score"], label="Rank Score")
-        bars2 = ax.barh(
+        bars1 = ax.barh(
             scores.index,
             scores["total_performance_score"],
             left=scores["total_rank_score"],
             label="Performance Score",
         )
+        bars2 = ax.barh(scores.index, scores["total_rank_score"], label="Rank Score")
         ax.set_xlabel("Score")
         # Add text labels beside each bar
         for b1, b2, value in zip(bars1, bars2, scores["total_score"]):
@@ -61,14 +66,18 @@ def plot_total_scores_split(league, horizontal=True):
                 va="center",
             )
         ax.legend(loc="upper left")
+        if min(scores["total_score"]) < 0:
+            ax.axvline(0, color="black", linewidth=0.8)
     else:
         scores = scores.sort_values("total_score", ascending=False)
-        bars1 = ax.bar(scores.index, scores["total_rank_score"], label="Rank Score")
+        bars1 = ax.bar(
+            scores.index, scores["total_performance_score"], label="Performance Score"
+        )
         bars2 = ax.bar(
             scores.index,
-            scores["total_performance_score"],
-            bottom=scores["total_rank_score"],
-            label="Performance Score",
+            scores["total_rank_score"],
+            bottom=scores["total_performance_score"],
+            label="Rank Score",
         )
         ax.set_ylabel("Score")
         # Add text labels above each bar
@@ -81,41 +90,15 @@ def plot_total_scores_split(league, horizontal=True):
                 va="bottom",
             )
         ax.legend(loc="lower left")
+        if min(scores["total_score"]) < 0:
+            ax.axhline(0, color="black", linewidth=0.8)
     return fig
 
 
-def plot_weekly_scores(league):
+def plot_weekly_scores(league, **format_kwargs):
     """Plot the weekly performance scores for each contestant's team as a heatmap with total scores as a bar plot on the right."""
     scores = league.get_weekly_scores()
-    totals = scores.sum(axis=1).sort_values()
-    scores = scores.loc[totals.index[::-1]]
-
-    n_contestants, n_episodes = scores.shape
-    heatmap_pixel_size = 0.24
-    width1 = 1.15 + heatmap_pixel_size * n_episodes  # Width of heatmap in inches
-    width2 = 1.0  # Width of barplot
-
-    fig, ax = plt.subplots(figsize=(6.4, 4.8))
-    heatmap = ax.imshow(
-        scores,
-        aspect="equal",
-        cmap="coolwarm",
-        norm=mcolors.CenteredNorm(),
-    )
-    set_xticks_above(ax)
-    ax.set_xlabel("Episode")
-    ax.set_xticks(range(len(scores.columns)), labels=scores.columns)
-    ax.set_yticks(range(len(scores.index)), labels=scores.index)
-    annotate_heatmap(ax, scores)
-
-    # Add barplot of total performance scores to the right
-    ax2 = add_axes(ax, "right", size=f"{width2 / width1 * 100:.1f}%")
-    bars = ax2.barh(scores.index, totals)
-    ax2.set_xticks([0, max(totals)])
-    ax2.set_yticks([])
-    ax2.set_ylim(reversed(ax.get_ylim()))
-    ax2.set_title("Total\nScore")
-    fig.tight_layout()
+    fig, ax_list = heatmap_bar_biplot(scores, **format_kwargs)
     return fig
 
 
@@ -136,42 +119,103 @@ def plot_rank_scores(league):
     return fig
 
 
-def plot_performance_scores(league):
+def plot_performance_scores(league, **format_kwargs):
     """Plot weekly performance scores for each queen (before the captain multiplier) as a heatmap with total scores as a bar plot on the right."""
     scores = league.get_performance_scores()
+    fig, ax_list = heatmap_bar_biplot(scores, **format_kwargs)
+    return fig
+
+
+def heatmap_bar_biplot(
+    scores,
+    pixel_size=0.24,
+    barplot_width=1.0,
+    ytick_space=1.15,
+    panel_gap=0.08,
+    vpad=0.5,
+    fig_dpi=plt.rcParams["figure.dpi"],
+):
+    """Create a heatmap of scores with a bar plot of total scores to the right.
+
+    Parameters
+    ----------
+    scores : pd.DataFrame
+        DataFrame of scores to plot in the heatmap.
+    pixel_size : float, optional
+        Size of each cell in the heatmap in inches.
+    barplot_width : float, optional
+        Width of the bar plot in inches.
+    ytick_space : float, optional
+        Space allocated for y-axis tick labels in inches.
+    panel_gap : float, optional
+        Gap between the heatmap and bar plot in inches.
+    vpad : float, optional
+        Vertical padding above and below the heatmap in inches.
+
+    Returns
+    -------
+    fig : matplotlib.figure.Figure
+        The created figure.
+    (ax_hm, ax_bar) : tuple of matplotlib.axes.Axes
+        The heatmap and bar plot axes.
+    """
+    # Setup data
     totals = scores.sum(axis=1).sort_values()
     scores = scores.loc[totals.index[::-1]]
 
-    n_queens, n_episodes = scores.shape
-    heatmap_pixel_size = 0.24
-    width1 = 1.15 + heatmap_pixel_size * n_episodes  # Width of heatmap in inches
-    width2 = 1.0  # Width of barplot
+    # Figure out dimensions with a temporary heatmap
+    nrow, ncol = scores.shape
+    tmp_fig, tmp_ax = plt.subplots(figsize=(4, 4))
 
-    fig, ax = plt.subplots(figsize=(6.4, 4.8))
-    # Draw the heatmap
-    heatmap = ax.imshow(
+    tmp_ax.imshow(scores, aspect="equal")
+    tmp_ax.set_yticks(range(nrow), labels=scores.index)
+
+    tmp_fig.canvas.draw()
+    renderer = tmp_fig.canvas.get_renderer()
+
+    max_label_width_px = max(
+        label.get_window_extent(renderer).width
+        for label in tmp_ax.get_yticklabels()
+        if label.get_text()
+    )
+
+    plt.close(tmp_fig)
+
+    ytick_space_in = max_label_width_px / fig_dpi + 0.2
+    heatmap_width = ncol * pixel_size
+    total_width = ytick_space_in + heatmap_width + panel_gap + barplot_width
+    total_height = nrow * pixel_size + 2 * vpad
+
+    # Draw the real heatmap
+    fig, ax_hm = plt.subplots(figsize=(total_width, total_height), dpi=fig_dpi)
+    heatmap = ax_hm.imshow(
         scores,
         aspect="equal",
         cmap="coolwarm",
         norm=mcolors.CenteredNorm(),
     )
-    set_xticks_above(ax)
-    ax.set_xlabel("Episode")
-    ax.set_xticks(range(len(scores.columns)), labels=scores.columns)
-    ax.set_yticks(range(len(scores.index)), labels=scores.index)
-    annotate_heatmap(ax, scores)
+    set_xticks_above(ax_hm)
+    ax_hm.set_xlabel("Episode")
+    ax_hm.set_xticks(range(len(scores.columns)), labels=scores.columns)
+    ax_hm.set_yticks(range(len(scores.index)), labels=scores.index)
+    annotate_heatmap(ax_hm, scores)
 
-    # Add barplot of total performance scores to the right
-    ax2 = add_axes(ax, "right", size=f"{width2 / width1 * 100:.1f}%")
-    bars = ax2.barh(scores.index, totals)
-    ax2.set_xticks([min(totals), max(totals)])
-    ax2.set_yticks([])
-    ax2.axvline(0, color="black", linewidth=0.8)
-    ax2.set_ylim(reversed(ax.get_ylim()))
-    ax2.set_title("Total\nScore")
+    # Barplot
+    ax_bar = add_axes(ax_hm, "right", size=barplot_width, pad=panel_gap)
+    y = np.arange(nrow)
+    ax_bar.barh(y, totals)
+    xmin = min(0, totals.min())
+    xmax = totals.max()
+    ax_bar.set_xticks([xmin, xmax])
+    ax_bar.set_yticks([])
+    ax_bar.set_ylim(ax_hm.get_ylim())
+    ax_bar.invert_yaxis()
+    ax_bar.set_title("Total\nScore")
 
-    fig.tight_layout()
-    return fig
+    if xmin < 0:
+        ax_bar.axvline(0, color="black", linewidth=0.8)
+
+    return fig, (ax_hm, ax_bar)
 
 
 def annotate_heatmap(ax, data):
@@ -206,10 +250,10 @@ def add_axes(ax, position, size="25%", pad=0.02):
         The original axes to which new axes will be added.
     position : str
         The position to add the new axes ('right', 'left', 'top', 'bottom').
-    size : str, optional
-        The size of the new axes as a percentage of the original axes size.
+    size : int or str, optional
+        The size of the new axes as a percentage of the original axes size (str) or as an absolute size in inches (int).
     pad : float, optional
-        The padding between the original axes and the new axesß.
+        The padding between the original axes and the new axes in inches.
 
     Returns
     -------

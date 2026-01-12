@@ -86,6 +86,7 @@ This does a similar thing to `publish.sh`, but instead of switching branches, it
 ## Roadmap
 - Enable archiving of past seasons
 - Include checks on team creation so every queen is included
+- If the rank scores plot is all zeroes, don't show it
 - Show exact events week-to-week for the queens
 - Create a plot that shows each person's total score grow from week-to-week
 - Add an event for a second chance (queen is eliminated and comes back). Have a point value for this event. Have system to update queen ranks when someone is uneliminated.

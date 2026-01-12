@@ -228,3 +228,4 @@ Gemfile.lock
 # Custom
 *.pkl
 site-build/
+test/sandbox.ipynb
