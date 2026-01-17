@@ -191,7 +191,8 @@ def heatmap_bar_biplot(
     heatmap = ax_hm.imshow(
         scores,
         aspect="equal",
-        cmap="coolwarm",
+        cmap="PuOr_r",
+        # cmap="coolwarm",
         norm=mcolors.CenteredNorm(),
     )
     set_xticks_above(ax_hm)
