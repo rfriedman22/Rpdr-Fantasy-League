@@ -1,0 +1,31 @@
+{
+    "episode": 3,
+    "finale": false,
+    "queen_eliminated": ["Mandy Mango"],
+    "performance": {
+        "tops": [
+            "Darlene Mitchell", "Jane Don't", "Juicy Love Dion"
+        ],
+        "win_main_challenge": [
+            "Juicy Love Dion"
+        ],
+        "bottoms": [
+            "Mandy Mango", "Briar Blush", "Vita VonTesse Starr"
+        ],
+        "lip_sync_for_your_life": ["Mandy Mango", "Briar Blush"],
+        "lip_sync_winner": ["Briar Blush"],
+        "win_mini_challenge": [
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
