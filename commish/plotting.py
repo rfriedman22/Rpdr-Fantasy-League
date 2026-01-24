@@ -113,7 +113,7 @@ def plot_weekly_scores(league, **format_kwargs):
     return fig
 
 
-def plot_rank_scores(league):
+def plot_rank_scores(league, cmap="plasma", low_is_light=False):
     """Plot the rank scores each queen contributes to each team. Queens are ordered by their rank in the season. Queens who are still in the competition are at the bottom."""
     scores = league.get_rank_scores().T
     ranks = league.cast.get_ranks()
@@ -121,11 +121,11 @@ def plot_rank_scores(league):
     ranks = ranks.sort_values()
     scores = scores.loc[ranks.index, ::-1]
     fig, ax = plt.subplots()
-    ax.imshow(scores, aspect="equal", cmap="Reds")
+    ax.imshow(scores, aspect="equal", cmap=cmap)
     ax.set_xticks(range(len(scores.columns)))
     ax.set_xticklabels(scores.columns, rotation=90, ha="center", va="top")
     ax.set_yticks(range(len(scores.index)), labels=scores.index)
-    annotate_heatmap(ax, scores)
+    annotate_heatmap(ax, scores, low_is_light=low_is_light)
     fig.tight_layout()
     return fig
 
@@ -235,8 +235,12 @@ def heatmap_bar_biplot(
     return fig, (ax_hm, ax_bar)
 
 
-def annotate_heatmap(ax, data):
+def annotate_heatmap(ax, data, low_is_light=True):
     """Annotate each cell on the heatmap with the underlying value"""
+    if low_is_light:
+        low, high = "black", "white"
+    else:
+        low, high = "white", "black"
     for i in range(data.shape[0]):
         for j in range(data.shape[1]):
             ax.text(
@@ -245,9 +249,7 @@ def annotate_heatmap(ax, data):
                 f"{data.iloc[i, j]}",
                 ha="center",
                 va="center",
-                color="black"
-                if abs(data.iloc[i, j]) < (data.values.max() / 2)
-                else "white",
+                color=low if abs(data.iloc[i, j]) < (data.values.max() / 2) else high,
             )
     return ax
 

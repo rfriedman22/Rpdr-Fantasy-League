@@ -20,6 +20,8 @@ This script expects a file formatted like the one in `schemas/season-config.yml`
 - The path to several files, including the queens, the contestant submissions, and rulesets
 - The path to a directory containing json files numbered `01.json`, `02.json`, etc. following the pattern in `schemas/episode.json`
 - Any introductory text about the league
+- Various customization options for the colors used in plots. If these parameters are not set, the defaults are used.
+    - Note that if heatmap text annotations are hard to see, try setting the corresponding invert value to true.
 
 It will output a markdown file that can be rendered as a webpage using Jekyll or similar tools. The file is generated using Jinja2 following the templates in `templates/`.
 
@@ -86,7 +88,6 @@ This does a similar thing to `publish.sh`, but instead of switching branches, it
 ## Roadmap
 - Enable archiving of past seasons
 - Include checks on team creation so every queen is included
-- If the rank scores plot is all zeroes, don't show it
 - Show exact events week-to-week for the queens
 - Create a plot that shows each person's total score grow from week-to-week
 - Add an event for a second chance (queen is eliminated and comes back). Have a point value for this event. Have system to update queen ranks when someone is uneliminated.

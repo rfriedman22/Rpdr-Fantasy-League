@@ -5,3 +5,9 @@ rank_scores: "assets/rules/rank_values/final_four.tsv"
 event_scores: "assets/rules/event_scores/small.tsv"
 episodes_dir: "assets/seasons/17/episodes/"
 intro_text: ""
+rank_scores_cmap: "plasma"
+performance_cmap: "PuOr_r"
+invert_rank_annotation: false
+invert_performance_annotation: false
+bar_color: "hotpink"
+second_bar_color: "mediumturquoise"

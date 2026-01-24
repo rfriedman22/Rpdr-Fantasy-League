@@ -121,6 +121,16 @@ if has_started:
     performance_plot_kwargs = {}
     if "performance_cmap" in season_config:
         performance_plot_kwargs["cmap"] = season_config["performance_cmap"]
+    if "invert_rank_annotation" in season_config:
+        performance_plot_kwargs["low_is_light"] = season_config[
+            "invert_rank_annotation"
+        ]
+
+    rank_scores_kwargs = {}
+    if "rank_scores_cmap" in season_config:
+        rank_scores_kwargs["cmap"] = season_config["rank_scores_cmap"]
+    if "invert_rank_annotation" in season_config:
+        rank_scores_kwargs["low_is_light"] = not season_config["invert_rank_annotation"]
 
     bar_color = season_config["bar_color"] if "bar_color" in season_config else None
     second_color = (
@@ -143,7 +153,10 @@ if has_started:
             lambda x: plotting.plot_weekly_scores(x, **performance_plot_kwargs),
             "weekly_scores.png",
         ),
-        (plotting.plot_rank_scores, "rank_scores.png"),
+        (
+            lambda x: plotting.plot_rank_scores(x, **rank_scores_kwargs),
+            "rank_scores.png",
+        ),
         (
             lambda x: plotting.plot_performance_scores(x, **performance_plot_kwargs),
             "weekly_performance_scores.png",
