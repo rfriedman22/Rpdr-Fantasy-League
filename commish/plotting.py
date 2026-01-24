@@ -4,13 +4,13 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 import numpy as np
 
 
-def plot_total_scores(league, horizontal=True):
+def plot_total_scores(league, color=None, horizontal=True):
     """Plot total scores for each contestant as a bar chart."""
     scores = league.total_scores()
     fig, ax = plt.subplots()
     if horizontal:
         scores = scores.sort_values("total_score", ascending=True)
-        bars = ax.barh(scores.index, scores["total_score"])
+        bars = ax.barh(scores.index, scores["total_score"], color=color)
         # Add text labels beside each bar
         for bar, value in zip(bars, scores["total_score"]):
             ax.text(
@@ -25,7 +25,7 @@ def plot_total_scores(league, horizontal=True):
             ax.axvline(0, color="black", linewidth=0.8)
     else:
         scores = scores.sort_values("total_score", ascending=False)
-        bars = ax.bar(scores.index, scores["total_score"])
+        bars = ax.bar(scores.index, scores["total_score"], color=color)
         # Add text labels above each bar
         for bar, value in zip(bars, scores["total_score"]):
             ax.text(
@@ -42,8 +42,9 @@ def plot_total_scores(league, horizontal=True):
     return fig
 
 
-def plot_total_scores_split(league, horizontal=True):
+def plot_total_scores_split(league, colors=None, horizontal=True):
     """Plot total scores split into rank and performance scores as a stacked bar chart."""
+    assert len(colors) == 2
     scores = league.total_scores()
     fig, ax = plt.subplots()
     if horizontal:
@@ -53,8 +54,14 @@ def plot_total_scores_split(league, horizontal=True):
             scores["total_performance_score"],
             left=scores["total_rank_score"],
             label="Performance Score",
+            color=colors[0],
         )
-        bars2 = ax.barh(scores.index, scores["total_rank_score"], label="Rank Score")
+        bars2 = ax.barh(
+            scores.index,
+            scores["total_rank_score"],
+            label="Rank Score",
+            color=colors[1],
+        )
         ax.set_xlabel("Score")
         # Add text labels beside each bar
         for b1, b2, value in zip(bars1, bars2, scores["total_score"]):
@@ -71,13 +78,17 @@ def plot_total_scores_split(league, horizontal=True):
     else:
         scores = scores.sort_values("total_score", ascending=False)
         bars1 = ax.bar(
-            scores.index, scores["total_performance_score"], label="Performance Score"
+            scores.index,
+            scores["total_performance_score"],
+            label="Performance Score",
+            color=colors[0],
         )
         bars2 = ax.bar(
             scores.index,
             scores["total_rank_score"],
             bottom=scores["total_performance_score"],
             label="Rank Score",
+            color=colors[1],
         )
         ax.set_ylabel("Score")
         # Add text labels above each bar
@@ -128,6 +139,8 @@ def plot_performance_scores(league, **format_kwargs):
 
 def heatmap_bar_biplot(
     scores,
+    cmap="PuOr_r",
+    bar_color=None,
     pixel_size=0.24,
     barplot_width=1.0,
     ytick_space=1.15,
@@ -141,6 +154,10 @@ def heatmap_bar_biplot(
     ----------
     scores : pd.DataFrame
         DataFrame of scores to plot in the heatmap.
+    cmap : str or matplotlib.colors.Colormap
+        Colormap to use for the heatmap.
+    bar_color : str
+        Color of the bars in the bar plot.
     pixel_size : float, optional
         Size of each cell in the heatmap in inches.
     barplot_width : float, optional
@@ -191,8 +208,7 @@ def heatmap_bar_biplot(
     heatmap = ax_hm.imshow(
         scores,
         aspect="equal",
-        cmap="PuOr_r",
-        # cmap="coolwarm",
+        cmap=cmap,
         norm=mcolors.CenteredNorm(),
     )
     set_xticks_above(ax_hm)
@@ -204,7 +220,7 @@ def heatmap_bar_biplot(
     # Barplot
     ax_bar = add_axes(ax_hm, "right", size=barplot_width, pad=panel_gap)
     y = np.arange(nrow)
-    ax_bar.barh(y, totals)
+    ax_bar.barh(y, totals, color=bar_color)
     xmin = min(0, totals.min())
     xmax = totals.max()
     ax_bar.set_xticks([xmin, xmax])

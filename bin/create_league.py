@@ -116,12 +116,36 @@ if has_started:
     os.makedirs(plots_dir, exist_ok=True)
 
     # Plots
+    performance_plot_kwargs = {}
+    if "performance_cmap" in season_config:
+        performance_plot_kwargs["cmap"] = season_config["performance_cmap"]
+
+    bar_color = season_config["bar_color"] if "bar_color" in season_config else None
+    second_color = (
+        season_config["second_bar_color"]
+        if "second_bar_color" in season_config
+        else None
+    )
+
+    performance_plot_kwargs["bar_color"] = bar_color
+
     plot_functions = [
-        (plotting.plot_total_scores, "total_scores.png"),
-        (plotting.plot_total_scores_split, "stacked_total_scores.png"),
-        (plotting.plot_weekly_scores, "weekly_scores.png"),
+        (lambda x: plotting.plot_total_scores(x, color=bar_color), "total_scores.png"),
+        (
+            lambda x: plotting.plot_total_scores_split(
+                x, colors=[bar_color, second_color]
+            ),
+            "stacked_total_scores.png",
+        ),
+        (
+            lambda x: plotting.plot_weekly_scores(x, **performance_plot_kwargs),
+            "weekly_scores.png",
+        ),
         (plotting.plot_rank_scores, "rank_scores.png"),
-        (plotting.plot_performance_scores, "weekly_performance_scores.png"),
+        (
+            lambda x: plotting.plot_performance_scores(x, **performance_plot_kwargs),
+            "weekly_performance_scores.png",
+        ),
     ]
 
     for plot_func, filename in plot_functions:

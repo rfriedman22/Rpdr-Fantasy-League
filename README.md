@@ -84,7 +84,6 @@ sh bin/build_local.sh
 This does a similar thing to `publish.sh`, but instead of switching branches, it will launch a local server so you can preview the website.
 
 ## Roadmap
-- Allow configs of plotting settings that aren't the defaults installed with the package
 - Enable archiving of past seasons
 - Include checks on team creation so every queen is included
 - If the rank scores plot is all zeroes, don't show it
