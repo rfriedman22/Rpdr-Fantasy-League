@@ -1,0 +1,38 @@
+{
+    "episode": 4,
+    "finale": false,
+    "queen_eliminated": ["Briar Blush"],
+    "performance": {
+        "tops": [
+            "Jane Don't",
+            "Ciara Myst",
+            "Vita VonTesse Starr"
+        ],
+        "win_main_challenge": [
+            "Vita VonTesse Starr"
+        ],
+        "bottoms": [
+            "Briar Blush",
+            "Kenya Pleaser",
+            "Discord Addams"
+        ],
+        "lip_sync_for_your_life": [
+            "Briar Blush",
+            "Kenya Pleaser"
+        ],
+        "lip_sync_winner": ["Kenya Pleaser"],
+        "win_mini_challenge": [
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": ["Briar Blush"],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
