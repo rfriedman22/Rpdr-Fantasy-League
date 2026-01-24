@@ -89,6 +89,8 @@ context = {
     "season": season,
     "sections": sections,
     "queen_names": league.cast.get_queens().index.sort_values().tolist(),
+    "has_eliminations": league.cast.num_remaining_queens()
+    < len(league.cast.get_queens()),
     "finished": league.cast.num_remaining_queens() == 0,
     "performance_rules": event_scores.to_markdown(),
     "rank_rules": rank_scores.to_markdown(),

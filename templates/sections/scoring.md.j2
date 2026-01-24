@@ -10,9 +10,13 @@ Here's how everybody {% if finished %}did{% else %}is doing{% endif %} overall t
 
 ## Rank Scores
 
+{% if has_eliminations %}
 Here is how every queen finished and how many points they earned for each contestant in the league. Queens still in the competition are at the bottom:
 
 ![Rank Scores]({{ scoring.rank_scores_plot }})
+{% else %}
+Rank scores will be displayed after a queen is eliminated.
+{% endif %}
 
 ## Performance Scores
 
