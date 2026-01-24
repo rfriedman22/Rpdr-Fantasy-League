@@ -135,9 +135,11 @@ Here's how everybody did overall this season:
 
 ## Rank Scores
 
+
 Here is how every queen finished and how many points they earned for each contestant in the league. Queens still in the competition are at the bottom:
 
 ![Rank Scores](plots/rank_scores.png)
+
 
 ## Performance Scores
 

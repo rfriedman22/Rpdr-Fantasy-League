@@ -4,7 +4,7 @@ title: Season 18
 # RuPaul's Drag Race Season 18 Fantasy League
 
 
-This is the fantasy league for the upcoming season of RuPaul's Drag Race.
+This is the fantasy league for the current season of RuPaul's Drag Race.
 
 
 This season's queens are:
@@ -123,11 +123,11 @@ This is how everybody ranked the queens this season:
 
 Here's how everybody is doing overall this season:
 
-|                   |   Ty |   Jacob |   Brie |   Ryan |   Josh |   Olivia |   Emilee |   Austin |   Bryan |   Kolin |   Jourdan |   Mom |
-|:------------------|-----:|--------:|-------:|-------:|-------:|---------:|---------:|---------:|--------:|--------:|----------:|------:|
-| Performance Score |  230 |     200 |    190 |    175 |    175 |       80 |       50 |       50 |      10 |     -25 |       -75 |  -130 |
-| Rank Score        |   12 |       1 |      1 |      9 |      2 |        1 |        2 |        1 |      10 |       2 |        25 |    14 |
-| Total Score       |  242 |     201 |    191 |    184 |    177 |       81 |       52 |       51 |      20 |     -23 |       -50 |  -116 |
+|                   |   Ty |   Josh |   Jacob |   Brie |   Ryan |   Olivia |   Bryan |   Austin |   Emilee |   Jourdan |   Kolin |   Mom |
+|:------------------|-----:|-------:|--------:|-------:|-------:|---------:|--------:|---------:|---------:|----------:|--------:|------:|
+| Performance Score |  310 |    300 |     280 |    265 |    240 |      155 |     120 |       80 |       50 |       -25 |     -55 |  -190 |
+| Rank Score        |   35 |     38 |      32 |     17 |     28 |       17 |      33 |       33 |       34 |        52 |      48 |    82 |
+| Total Score       |  345 |    338 |     312 |    282 |    268 |      172 |     153 |      113 |       84 |        27 |      -7 |  -108 |
 
 ![Total Scores](plots/total_scores.png)
 
@@ -135,9 +135,11 @@ Here's how everybody is doing overall this season:
 
 ## Rank Scores
 
+
 Here is how every queen finished and how many points they earned for each contestant in the league. Queens still in the competition are at the bottom:
 
 ![Rank Scores](plots/rank_scores.png)
+
 
 ## Performance Scores
 
