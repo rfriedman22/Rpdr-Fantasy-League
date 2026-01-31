@@ -1,0 +1,35 @@
+{
+    "episode": 5,
+    "finale": false,
+    "queen_eliminated": [],
+    "performance": {
+        "tops": [
+            "Juicy Love Dion",
+            "Mia Starr"
+        ],
+        "win_main_challenge": [
+            "Juicy Love Dion",
+            "Mia Starr"
+        ],
+        "bottoms": [
+            "Ciara Myst"
+        ],
+        "lip_sync_for_your_life": [],
+        "lip_sync_winner": [],
+        "win_mini_challenge": [
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [
+            "Mia Starr"
+        ],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
