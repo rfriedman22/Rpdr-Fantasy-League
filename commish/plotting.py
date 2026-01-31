@@ -117,9 +117,9 @@ def plot_rank_scores(league, cmap="plasma", low_is_light=False):
     """Plot the rank scores each queen contributes to each team. Queens are ordered by their rank in the season. Queens who are still in the competition are at the bottom."""
     scores = league.get_rank_scores().T
     ranks = league.cast.get_ranks()
-    ranks[ranks == 0] = float("inf")  # So that unranked go to bottom
+    ranks[ranks == 0] = max(ranks) + 1  # So that unranked go to bottom
     ranks = ranks.sort_values()
-    scores = scores.loc[ranks.index, ::-1]
+    scores = scores.loc[ranks.index]
     fig, ax = plt.subplots()
     ax.imshow(scores, aspect="equal", cmap=cmap)
     ax.set_xticks(range(len(scores.columns)))
