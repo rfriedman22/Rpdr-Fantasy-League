@@ -1,0 +1,37 @@
+{
+    "episode": 6,
+    "finale": false,
+    "queen_eliminated": ["Ciara Myst"],
+    "performance": {
+        "tops": [
+            "Jane Don't",
+            "Discord Addams"
+        ],
+        "win_main_challenge": [
+            "Discord Addams"
+        ],
+        "bottoms": [
+            "Myki Meeks"
+        ],
+        "lip_sync_for_your_life": [
+            "Ciara Myst",
+            "Myki Meeks"
+        ],
+        "lip_sync_winner": [
+            "Myki Meeks"
+        ],
+        "win_mini_challenge": [
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
