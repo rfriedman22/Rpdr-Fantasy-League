@@ -1,24 +1,29 @@
 {
-    "episode": 6,
+    "episode": 8,
     "finale": false,
-    "queen_eliminated": ["Ciara Myst"],
+    "queen_eliminated": [
+        "Mia Starr"
+    ],
     "performance": {
         "tops": [
             "Jane Don't",
-            "Athena Dion"
+            "Nini Coco",
+            "Myki Meeks"
         ],
         "win_main_challenge": [
-            "Athena Dion"
+            "Nini Coco"
         ],
         "bottoms": [
-            "Myki Meeks"
+            "Mia Starr",
+            "Juicy Love Dion",
+            "Kenya Pleaser"
         ],
         "lip_sync_for_your_life": [
-            "Ciara Myst",
-            "Myki Meeks"
+            "Mia Starr",
+            "Kenya Pleaser"
         ],
         "lip_sync_winner": [
-            "Myki Meeks"
+            "Kenya Pleaser"
         ],
         "win_mini_challenge": [
         ],
