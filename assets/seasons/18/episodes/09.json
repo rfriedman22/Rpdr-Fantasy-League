@@ -1,0 +1,44 @@
+{
+    "episode": 9,
+    "finale": false,
+    "queen_eliminated": [
+        "Athena Dion"
+    ],
+    "performance": {
+        "tops": [
+            "Myki Meeks",
+            "Jane Don't",
+            "Kenya Pleaser"
+        ],
+        "win_main_challenge": [
+            "Myki Meeks"
+        ],
+        "bottoms": [
+            "Athena Dion",
+            "Juicy Love Dion",
+            "Discord Addams"
+        ],
+        "lip_sync_for_your_life": [
+            "Athena Dion",
+            "Juicy Love Dion"
+        ],
+        "lip_sync_winner": [
+            "Juicy Love Dion"
+        ],
+        "win_mini_challenge": [
+            "Kenya Pleaser",
+            "Discord Addams"
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
