@@ -123,11 +123,11 @@ This is how everybody ranked the queens this season:
 
 Here's how everybody is doing overall this season:
 
-|                   |   Josh |   Jacob |   Ty |   Brie |   Olivia |   Ryan |   Emilee |   Austin |   Kolin |   Bryan |   Jourdan |   Mom |
-|:------------------|-------:|--------:|-----:|-------:|---------:|-------:|---------:|---------:|--------:|--------:|----------:|------:|
-| Performance Score |    495 |     525 |  585 |    500 |      510 |    460 |      180 |      250 |      50 |     200 |       -30 |   -75 |
-| Rank Score        |    303 |     245 |  172 |    183 |      165 |    166 |      365 |      290 |     369 |     212 |       216 |   254 |
-| Total Score       |    798 |     770 |  757 |    683 |      675 |    626 |      545 |      540 |     419 |     412 |       186 |   179 |
+|                   |   Jacob |   Ty |   Josh |   Olivia |   Ryan |   Brie |   Austin |   Emilee |   Kolin |   Bryan |   Jourdan |   Mom |
+|:------------------|--------:|-----:|-------:|---------:|-------:|-------:|---------:|---------:|--------:|--------:|----------:|------:|
+| Performance Score |     740 |  785 |    715 |      725 |    675 |    635 |      355 |      165 |      35 |     145 |        25 |   -50 |
+| Rank Score        |     365 |  292 |    335 |      237 |    278 |    239 |      402 |      405 |     401 |     284 |       288 |   278 |
+| Total Score       |    1105 | 1077 |   1050 |      962 |    953 |    874 |      757 |      570 |     436 |     429 |       313 |   228 |
 
 ![Total Scores](plots/total_scores.png)
 
