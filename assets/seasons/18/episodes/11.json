@@ -1,0 +1,43 @@
+{
+    "episode": 11,
+    "finale": false,
+    "queen_eliminated": [
+        "Kenya Pleaser"
+    ],
+    "performance": {
+        "tops": [
+            "Darlene Mitchell",
+            "Jane Don't",
+            "Myki Meeks"
+        ],
+        "win_main_challenge": [
+            "Darlene Mitchell"
+        ],
+        "bottoms": [
+            "Kenya Pleaser",
+            "Juicy Love Dion",
+            "Nini Coco"
+        ],
+        "lip_sync_for_your_life": [
+            "Kenya Pleaser",
+            "Juicy Love Dion"
+        ],
+        "lip_sync_winner": [
+            "Juicy Love Dion"
+        ],
+        "win_mini_challenge": [
+            "Myki Meeks"
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
