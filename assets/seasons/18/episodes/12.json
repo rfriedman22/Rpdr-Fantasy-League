@@ -1,0 +1,41 @@
+{
+    "episode": 12,
+    "finale": false,
+    "queen_eliminated": ["Discord Addams"],
+    "performance": {
+        "tops": [
+            "Myki Meeks",
+            "Juicy Love Dion",
+            "Darlene Mitchell"
+        ],
+        "win_main_challenge": [
+            "Myki Meeks"
+        ],
+        "bottoms": [
+            "Discord Addams",
+            "Nini Coco",
+            "Jane Don't"
+        ],
+        "lip_sync_for_your_life": [
+            "Discord Addams",
+            "Nini Coco"
+        ],
+        "lip_sync_winner": [
+            "Nini Coco"
+        ],
+        "win_mini_challenge": [
+            "Discord Addams"
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
