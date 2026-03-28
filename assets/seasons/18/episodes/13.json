@@ -1,0 +1,41 @@
+{
+    "episode": 13,
+    "finale": false,
+    "queen_eliminated": [
+        "Jane Don't"
+    ],
+    "performance": {
+        "tops": [
+            "Myki Meeks",
+            "Juicy Love Dion",
+            "Darlene Mitchell"
+        ],
+        "win_main_challenge": [
+            "Myki Meeks"
+        ],
+        "bottoms": [
+            "Jane Don't",
+            "Nini Coco"
+        ],
+        "lip_sync_for_your_life": [
+            "Jane Don't",
+            "Nini Coco"
+        ],
+        "lip_sync_winner": [
+            "Nini Coco"
+        ],
+        "win_mini_challenge": [
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
