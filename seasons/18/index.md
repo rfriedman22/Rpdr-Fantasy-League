@@ -66,14 +66,14 @@ In a lip sync smackdown, points are earned each time a queen wins a lip sync, bu
 
 Based on how a queen ranks, they will earn a select number of points. Those points will be multiplied by the point value of the rank assigned in the team selection.
 
-**Note:** This scoring system assumes a final four and no double sashays. In a final four, third and fourth place are worth the same. The teammate you think will be runner-up is worth slightly more than the third teammate. Rules will be adjusted if needed.
+**Note:** The default scoring system assumes a final four and no double sashays. In a final four, third and fourth place are worth the same. The teammate you think will be runner-up is worth slightly more than the third teammate. Rules will be adjusted if needed.
 
 |   Rank |   Worth of the Team |   Worth of the Queen |
 |-------:|--------------------:|---------------------:|
 |      1 |                  25 |                   25 |
 |      2 |                  15 |                   15 |
-|      3 |                  14 |                   13 |
-|      4 |                  12 |                   13 |
+|      3 |                  14 |                   14 |
+|      4 |                  12 |                   12 |
 |      5 |                  10 |                   10 |
 |      6 |                   9 |                    9 |
 |      7 |                   8 |                    8 |
@@ -126,8 +126,8 @@ Here's how everybody is doing overall this season:
 |                   |   Olivia |   Jacob |   Josh |   Ty |   Ryan |   Brie |   Austin |   Bryan |   Emilee |   Mom |   Jourdan |   Kolin |
 |:------------------|---------:|--------:|-------:|-----:|-------:|-------:|---------:|--------:|---------:|------:|----------:|--------:|
 | Performance Score |     1115 |     650 |    625 |  635 |    570 |    575 |      310 |     155 |      105 |   115 |       130 |     -25 |
-| Rank Score        |      570 |     796 |    744 |  700 |    741 |    573 |      759 |     765 |      660 |   531 |       447 |     585 |
-| Total Score       |     1685 |    1446 |   1369 | 1335 |   1311 |   1148 |     1069 |     920 |      765 |   646 |       577 |     560 |
+| Rank Score        |      558 |     789 |    738 |  692 |    735 |    563 |      750 |     740 |      651 |   524 |       442 |     582 |
+| Total Score       |     1673 |    1439 |   1363 | 1327 |   1305 |   1138 |     1060 |     895 |      756 |   639 |       572 |     557 |
 
 ![Total Scores](plots/total_scores.png)
 
