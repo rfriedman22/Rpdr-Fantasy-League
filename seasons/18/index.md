@@ -121,13 +121,13 @@ This is how everybody ranked the queens this season:
 
 ## Total Scores
 
-Here's how everybody is doing overall this season:
+Here's how everybody did overall this season:
 
-|                   |   Olivia |   Jacob |   Josh |   Ty |   Ryan |   Brie |   Austin |   Bryan |   Emilee |   Mom |   Jourdan |   Kolin |
-|:------------------|---------:|--------:|-------:|-----:|-------:|-------:|---------:|--------:|---------:|------:|----------:|--------:|
-| Performance Score |     1115 |     650 |    625 |  635 |    570 |    575 |      310 |     155 |      105 |   115 |       130 |     -25 |
-| Rank Score        |      558 |     789 |    738 |  692 |    735 |    563 |      750 |     740 |      651 |   524 |       442 |     582 |
-| Total Score       |     1673 |    1439 |   1363 | 1327 |   1305 |   1138 |     1060 |     895 |      756 |   639 |       572 |     557 |
+|                   |   Olivia |   Brie |   Jacob |   Ty |   Ryan |   Josh |   Austin |   Bryan |   Emilee |   Mom |   Jourdan |   Kolin |
+|:------------------|---------:|-------:|--------:|-----:|-------:|-------:|---------:|--------:|---------:|------:|----------:|--------:|
+| Performance Score |     1225 |    685 |     925 |  865 |    800 |    855 |      430 |     315 |      150 |   130 |       170 |     -25 |
+| Rank Score        |     1529 |   1359 |    1040 | 1069 |   1118 |    990 |     1067 |    1089 |     1075 |   984 |       918 |     996 |
+| Total Score       |     2754 |   2044 |    1965 | 1934 |   1918 |   1845 |     1497 |    1404 |     1225 |  1114 |      1088 |     971 |
 
 ![Total Scores](plots/total_scores.png)
 
@@ -143,7 +143,7 @@ Here is how every queen finished and how many points they earned for each contes
 
 ## Performance Scores
 
-Here's how well everyone's team is doing on a week-to-week basis:
+Here's how well everyone's team did on a week-to-week basis:
 
 ![Weekly Scores](plots/weekly_scores.png)
 
