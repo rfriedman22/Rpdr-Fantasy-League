@@ -1,0 +1,64 @@
+---
+title: All Stars Season {{ season }}
+---
+# RuPaul's Drag Race All Stars Season {{ season }} Fantasy League
+
+{% include "sections/intro.md.j2" %}
+
+## Scoring
+
+### The Tournament of All Stars
+
+This season is a "Tournament of All Stars." There are 18 queens split into 3 heats (the show incorrectly calls this a bracket).  The other 9 queens will initially tie for 10th place.
+
+In the semifinals, there will be two elimination episodes (10 and 11) before the bracket. They will initially come in 9th and 8th place.
+
+At this point, there are 7 queens remaining. One of the queens who was previously eliminated will re-enter the race as a wild card. All the other eliminated queens will drop a rank (e.g. the 10th place queens drop to a tie for 11th place). Finally, the queens compete in a Lip Sync Smackdown For The Crown. The four queens eliminated in the first round tie for 5th place, the two queens eliminated in the second round tie for 3rd place, and the final lip sync determines the winner and runner-up.
+
+### Team Selection
+
+In each heat, you will select the 3 queens you think will advance to the semifinals for a total of 9 queens. From the 9 queens you selected to advance, pick who you think will be eliminated in episodes 10 and 11. Then from the remaining 7 queens, pick 3 that you think will be eliminated in the first round of the Smackdown, 2 that you think will be eliminated in the second round, and then the winner and runner-up.
+
+Your **team** is composed of the winner and runner-up. You earn points based on the **performance** of these two queens. Each week, you gain or lose points when the following things happen to your team member:
+
+{{ performance_rules }}
+
+Points have {{ captain_multiplier }} times greater value for your captain.
+
+**Note:** Point deductions for lip sync for your life only applies in episodes 10 and 11. During the heats, lip syncs are **for your legacy,** not **for your life.** Although lip syncs in the Smackdown are for your life, they do not cause point deductions because the winner is the ultimate winner of the season. This is in contrast to regular season Smackdowns, where the tournament is a separate event.
+
+You will also earn points based on the **accuracy of your rankings.** Based on how a queen ranks, they will earn a select number of points. Those points will be multiplied by the point value of the rank assigned in the team selection. These will not be stable until the final episode because of the wild card queen, but the final scoring rules will be:
+
+{{ rank_rules }}
+
+Due to the wild card, you can only guess three of the four queens that tie for 5th place, and the score for 8th place is a placeholder. This means it is impossible to get a perfect rank score. The closest you can get is to get the top 7 correct, the queen you place in 8th is the wild card, and the queen you place in 9th advanced to the semi-finals, but not to the Smackdown. The second best case scenario is the reverse -- the queen you place in 8th advances to the semi-finals and the queen you place in 9th is the wild card.
+
+If your winner or runner up is the wild card, you will receive **performance** points for that event.
+
+#### Example
+
+- Team 1 does not have Jinkx advance past the heat
+- Team 2 ranks Jinkx in 9th (eliminated in episode 10, the first of the semi-finals)
+- Team 3 ranks Jinkx as runner-up
+
+At first, Jinkx does not advance past her heat, so she is in a 9-way tie for 10th. Jinkx is initially worth 2 points so:
+- Team 1 earns 1 x 2 = 2 point
+- Team 2 earns 3 x 2 = 6 points
+- Team 3 earns 15 x 2 = 30 points
+
+At the Smackdown, Jinkx is selected as the wild card. Team 3 earns **performance** points for this event. She wins the first lip sync, but not the second. Her final rank is in 3rd, so she is now worth 10 points. Then her final **rank** score is:
+- Team 1 earns 1 x 10 = 10 points
+- Team 2 earns 3 x 10 = 30 points
+- Team 3 earns 15 x 10 = 150 points
+
+## Teams
+
+This is how everybody ranked the queens this season:
+
+{{ teams_table }}
+
+{% if sections.scoring %}
+{% include "sections/scoring.md.j2" %}
+{% else %}
+**Scoring will be updated here as the season progresses.**
+{% endif %}

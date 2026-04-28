@@ -47,8 +47,12 @@ for episode_file in episodes:
 
 # Set up the scoreboard page
 env = Environment(loader=FileSystemLoader("templates"), autoescape=False)
-scoreboard_template = env.get_template("season.md.j2")
+if "scoreboard_template" in season_config:
+    template_file = season_config["scoreboard_template"]
+else:
+    template_file = "season.md.j2"
 
+scoreboard_template = env.get_template(template_file)
 has_started = league.episode_number > 0
 sections = {
     "scoring": has_started,

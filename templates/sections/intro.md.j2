@@ -1,0 +1,17 @@
+{% if intro_text %}
+{{ intro_text }}
+{% endif %}
+
+This season's queens are:
+{% for queen in queen_names -%}
+- {{ queen }}
+{% endfor %}
+
+Jump to a section:
+- [Scoring](#scoring)
+- [Teams](#teams)
+{% if sections.scoring -%}
+- [Total Scores](#total-scores)
+- [Rank Scores](#rank-scores)
+- [Performance Scores](#performance-scores)
+{% endif %}

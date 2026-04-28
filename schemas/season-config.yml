@@ -11,3 +11,4 @@ invert_rank_annotation: false
 invert_performance_annotation: false
 bar_color: "hotpink"
 second_bar_color: "mediumturquoise"
+scoreboard_template: "season.md.j2"

@@ -22,6 +22,7 @@ This script expects a file formatted like the one in `schemas/season-config.yml`
 - Any introductory text about the league
 - Various customization options for the colors used in plots. If these parameters are not set, the defaults are used.
     - Note that if heatmap text annotations are hard to see, try setting the corresponding invert value to true.
+- Optionally, the name of a template for the scoreboard. Template must be located in `templates`. Default is `season.md.j2`.
 
 It will output a markdown file that can be rendered as a webpage using Jekyll or similar tools. The file is generated using Jinja2 following the templates in `templates/`.
 
@@ -70,7 +71,8 @@ onya.get_performance_events()
 To add an episode to your league, make a copy of `schemas/episode.json` called `<episode number>.json` located in the `episodes_dir` of your season. Note that the episode number must be two digits, so single digit episodes need a leading zero. Any fields where the values are lists can be filled in with names of queens in the season's `queens.txt` file. Some special cases are below:
 - In the case of a lip sync smackdown, points are applied each time a queen's name is entered for winning a lip sync. Do not enter queens for having to lip sync for their life.
 - If there is a double sashay or a double shantay, the points are applied to all queens who have to lip sync for their life.
-- In the finale episode, set the `finale` field to `true`, fill in the winner and runners up, and place any queens who made it to the finale but did not advance to the final lip sync in the `queen_eliminated` field.
+- All queens who are eliminated at the same time (e.g. from double sashays or a bracket-style elimination) will be assigned the same rank. For example, if 10 queens are remaining and 2 queens are eliminated at the same time, they tie for 9th place.
+- In the finale episode, set the `finale` field to `true`, fill in the winner and runner up, and place any queens who made it to the finale but did not advance to the final lip sync in the `queen_eliminated` field.
 
 ## Publishing to the Web
 There is a template for the website located in `site-template`. To publish the site to the web, run:
@@ -91,4 +93,8 @@ This does a similar thing to `publish.sh`, but instead of switching branches, it
 - Show exact events week-to-week for the queens
 - Create a plot that shows each person's total score grow from week-to-week
 - Add an event for a second chance (queen is eliminated and comes back). Have a point value for this event. Have system to update queen ranks when someone is uneliminated.
-- Set v1.0.0 at end of season, share before next All Stars
+- Share
+
+### All Stars 11
+- Need to account for a queen coming back.
+- Need to account for differences in team composition (2 vs 3).
