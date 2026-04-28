@@ -73,10 +73,10 @@ class Cast:
         num_remaining = sum(~eliminated_mask)
         return num_remaining
 
-    def eliminate_queen(self, queen_name, week):
+    def eliminate_queen(self, queen_name, week, rank):
         """Eliminate a queen from the cast.
 
-        When a queen is eliminated, their rank is set to the number of remaining queens at that time.
+        When a queen is eliminated, their rank is set to the provided rank.
 
         Parameters
         ----------
@@ -84,7 +84,8 @@ class Cast:
             The name of the queen to eliminate.
         week : int
             The week number when the queen is eliminated. This is only used for logging purposes.
+        rank : int
+            The rank to assign to the queen upon elimination.
         """
-        rank = self.num_remaining_queens()
         queen = self.get_queen(queen_name)
         queen.eliminate(week, rank)

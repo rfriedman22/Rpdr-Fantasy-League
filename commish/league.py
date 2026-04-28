@@ -230,8 +230,10 @@ class League:
         # Eliminate queens as needed
         eliminated_queen = episode.get_eliminated_queen()
         if len(eliminated_queen) > 0:
+            # All queens eliminated in the same episode get the same rank
+            rank = cast.num_remaining_queens() - len(eliminated_queen) + 1
             for q in eliminated_queen:
-                cast.eliminate_queen(q, episode_number)
+                cast.eliminate_queen(q, episode_number, rank)
 
         # Apply the performance events to the appropriate queens
         for event, queen in episode.get_performance().itertuples(index=False):
@@ -241,6 +243,6 @@ class League:
         if episode.is_finale():
             winner, runners_up = episode.get_finale_data()
             for q in runners_up:
-                cast.eliminate_queen(q, episode_number)
+                cast.eliminate_queen(q, episode_number, rank=2)
 
-            cast.eliminate_queen(winner, episode_number)
+            cast.eliminate_queen(winner, episode_number, rank=1)
