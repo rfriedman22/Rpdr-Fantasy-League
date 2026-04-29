@@ -227,6 +227,19 @@ class League:
 
         cast = self.cast
 
+        # If any queens are returning, add them back to the cast
+        returning_queens = episode.get_returning_queens()
+        if len(returning_queens) > 0:
+            assert len(returning_queens) == 1, (
+                "Multiple returning queens are not currently supported"
+            )
+            q = returning_queens[0]
+            old_rank = cast.return_queen(q)
+            # Other queens need to drop down to the appropriate rank
+            for q in cast.get_queens():
+                if q.get_rank() > old_rank:
+                    q.rank += 1
+
         # Eliminate queens as needed
         eliminated_queen = episode.get_eliminated_queen()
         if len(eliminated_queen) > 0:

@@ -89,3 +89,22 @@ class Cast:
         """
         queen = self.get_queen(queen_name)
         queen.eliminate(week, rank)
+
+    def return_queen(self, queen_name):
+        """Return a previously eliminated queen to the cast.
+
+        When a queen is returned, their rank is reset to 0.
+
+        Parameters
+        ----------
+        queen_name : str
+            The name of the queen to return.
+        Returns
+        -------
+        int
+            The rank of the queen before being returned.
+        """
+        queen = self.get_queen(queen_name)
+        old_rank = queen.get_rank()
+        queen.return_to_competition()
+        return old_rank

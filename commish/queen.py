@@ -57,6 +57,11 @@ class Queen:
         self.week_eliminated = week
         self.rank = rank
 
+    def return_to_competition(self):
+        """Return the queen to the competition. Reset elimination info."""
+        self.week_eliminated = None
+        self.rank = 0
+
     def add_performance_event(self, event, week):
         """Add a performance event for the queen in a specific week."""
         if week in self.performance_events:

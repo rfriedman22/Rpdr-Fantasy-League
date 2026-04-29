@@ -31,6 +31,7 @@ class Episode:
         self.episode = data["episode"]
         self.finale = data["finale"]
         self.queen_eliminated = data["queen_eliminated"]
+        self.returning_queen = data.get("returning_queen", [])
         self.performance = data["performance"]
         self.finale_data = data["finale_data"]
 
@@ -45,6 +46,10 @@ class Episode:
     def get_eliminated_queen(self):
         """Get the name of the queen eliminated in this episode. Returns None if no queen was eliminated."""
         return self.queen_eliminated
+
+    def get_returning_queens(self):
+        """Get the list of returning queens in this episode. Returns None if no queens are returning."""
+        return self.returning_queen
 
     def get_performance(self):
         """Get a DataFrame of performance events and associated queens."""

@@ -92,9 +92,7 @@ This does a similar thing to `publish.sh`, but instead of switching branches, it
 - Include checks on team creation so every queen is included
 - Show exact events week-to-week for the queens
 - Create a plot that shows each person's total score grow from week-to-week
-- Add an event for a second chance (queen is eliminated and comes back). Have a point value for this event. Have system to update queen ranks when someone is uneliminated.
 - Share
 
 ### All Stars 11
-- Need to account for a queen coming back.
 - Need to account for differences in team composition (2 vs 3).

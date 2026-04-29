@@ -2,6 +2,7 @@
     "episode": 1,
     "finale": false,
     "queen_eliminated": [],
+    "returning_queen": [],
     "performance": {
         "tops": [
         ],
@@ -19,7 +20,9 @@
         "wig_reveal": [],
         "lip_sync_malfunction": [],
         "miss_congeniality": [],
-        "wins_lip_sync_smackdown": []
+        "wins_lip_sync_smackdown": [],
+        "receive_mvq_vote": [],
+        "wild_card": []
     },
     "finale_data": {
         "winner": [],
