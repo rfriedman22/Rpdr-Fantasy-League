@@ -1,4 +1,4 @@
-season: AS11
+season: as11
 queens: "assets/seasons/as11/queens.txt"
 contestants: "assets/seasons/as11/contestants.tsv"
 rank_scores: "assets/rules/rank_values/all_stars_bracket.tsv"
