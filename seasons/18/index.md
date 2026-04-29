@@ -4,7 +4,7 @@ title: Season 18
 # RuPaul's Drag Race Season 18 Fantasy League
 
 
-This is the fantasy league for the current season of RuPaul's Drag Race.
+This is the fantasy league for Season 18 (2026) of RuPaul's Drag Race.
 
 
 This season's queens are:
