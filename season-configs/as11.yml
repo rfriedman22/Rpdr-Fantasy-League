@@ -1,0 +1,14 @@
+season: AS11
+queens: "assets/seasons/as11/queens.txt"
+contestants: "assets/seasons/as11/contestants.tsv"
+rank_scores: "assets/rules/rank_values/all_stars_bracket.tsv"
+event_scores: "assets/rules/event_scores/all_stars_bracket.tsv"
+episodes_dir: "assets/seasons/as11/episodes/"
+intro_text: "This is the fantasy league for Season 11 (2026) of RuPaul's Drag Race All Stars."
+rank_scores_cmap: "plasma"
+performance_cmap: "PuOr_r"
+invert_rank_annotation: false
+invert_performance_annotation: false
+bar_color: "hotpink"
+second_bar_color: "mediumturquoise"
+scoreboard_template: "all_stars_bracket.md.j2"

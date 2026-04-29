@@ -2,4 +2,5 @@ page_dir: seasons
 leagues:
   - 17
   - 18
-current: 18
+  - as11
+current: as11
