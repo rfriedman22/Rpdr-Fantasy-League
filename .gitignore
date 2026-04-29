@@ -229,3 +229,4 @@ Gemfile.lock
 *.pkl
 site-build/
 test/sandbox.ipynb
+stage/
