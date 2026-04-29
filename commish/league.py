@@ -84,6 +84,40 @@ class League:
         )
         return rank_scores
 
+    def _update_returning_queens(self, returning_queens):
+        """If any queens are returning, add them back to the cast and update the ranks of the other queens accordingly."""
+        if len(returning_queens) > 0:
+            assert len(returning_queens) == 1, (
+                "Multiple returning queens are not currently supported"
+            )
+            q = returning_queens[0]
+            old_rank = self.cast.return_queen(q)
+            # Other queens need to drop down to the appropriate rank
+            for q in self.cast.get_queens():
+                if q.get_rank() >= old_rank:
+                    q.rank += 1
+
+    def _eliminate_queens(self, queens, episode_number):
+        """Eliminate the given queens and calculate their ranks."""
+        if len(queens) > 0:
+            # All queens eliminated in the same episode get the same rank
+            rank = self.cast.num_remaining_queens() - len(queens) + 1
+            for q in queens:
+                self.cast.eliminate_queen(q, episode_number, rank)
+
+    def _apply_performance_events(self, performance_events, episode_number):
+        """Apply the given performance events to the appropriate queens."""
+        for event, queen in performance_events.itertuples(index=False):
+            self.cast.get_queen(queen).add_performance_event(event, episode_number)
+
+    def _apply_finale_data(self, finale_data, episode_number):
+        """Apply the finale data to the appropriate queens."""
+        winner, runners_up = finale_data
+        for q in runners_up:
+            self.cast.eliminate_queen(q, episode_number, rank=2)
+
+        self.cast.eliminate_queen(winner, episode_number, rank=1)
+
     def get_rank_scores(self):
         """The rank score is calculated by multiplying the queen's rank score by the contestant's rank score for that queen.
 
@@ -225,37 +259,8 @@ class League:
         print(f"Adding episode {episode_number}...")
         self.episode_number = episode_number
 
-        cast = self.cast
-
-        # If any queens are returning, add them back to the cast
-        returning_queens = episode.get_returning_queens()
-        if len(returning_queens) > 0:
-            assert len(returning_queens) == 1, (
-                "Multiple returning queens are not currently supported"
-            )
-            q = returning_queens[0]
-            old_rank = cast.return_queen(q)
-            # Other queens need to drop down to the appropriate rank
-            for q in cast.get_queens():
-                if q.get_rank() > old_rank:
-                    q.rank += 1
-
-        # Eliminate queens as needed
-        eliminated_queen = episode.get_eliminated_queen()
-        if len(eliminated_queen) > 0:
-            # All queens eliminated in the same episode get the same rank
-            rank = cast.num_remaining_queens() - len(eliminated_queen) + 1
-            for q in eliminated_queen:
-                cast.eliminate_queen(q, episode_number, rank)
-
-        # Apply the performance events to the appropriate queens
-        for event, queen in episode.get_performance().itertuples(index=False):
-            cast.get_queen(queen).add_performance_event(event, episode_number)
-
-        # If this is the finale, eliminate the runner up and then the winner
+        self._update_returning_queens(episode.get_returning_queens())
+        self._eliminate_queens(episode.get_eliminated_queen(), episode_number)
+        self._apply_performance_events(episode.get_performance(), episode_number)
         if episode.is_finale():
-            winner, runners_up = episode.get_finale_data()
-            for q in runners_up:
-                cast.eliminate_queen(q, episode_number, rank=2)
-
-            cast.eliminate_queen(winner, episode_number, rank=1)
+            self._apply_finale_data(episode.get_finale_data(), episode_number)
