@@ -12,3 +12,4 @@ invert_performance_annotation: false
 bar_color: "hotpink"
 second_bar_color: "mediumturquoise"
 scoreboard_template: "all_stars_bracket.md.j2"
+team_size: 2

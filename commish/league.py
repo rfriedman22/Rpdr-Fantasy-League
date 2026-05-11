@@ -29,6 +29,8 @@ class League:
         The path to the file containing event score values.
     captain_multiplier : int, optional
         The multiplier applied to the captain's score (default is 2).
+    team_size : int, optional
+        The number of queens on each contestant's team (including the captain). Default is 3.
 
     Attributes
     ----------
@@ -52,6 +54,7 @@ class League:
         rank_score_file,
         event_scores_file,
         captain_multiplier=2,
+        team_size=3,
     ):
         # Attributes
         self.season = season
@@ -59,7 +62,7 @@ class League:
         self.cast = Cast(queens_file)
         self.rules = Rules(rank_score_file, event_scores_file, captain_multiplier)
         self.contestants = Contestants(
-            contestant_file, n_queens=len(self.cast.get_queens())
+            contestant_file, n_queens=len(self.cast.get_queens()), team_size=team_size
         )
 
     def _get_queen_rank_scores(self):

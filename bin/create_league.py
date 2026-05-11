@@ -38,6 +38,8 @@ league = League(
     contestant_file=season_config["contestants"],
     rank_score_file=season_config["rank_scores"],
     event_scores_file=season_config["event_scores"],
+    captain_multiplier=season_config.get("captain_multiplier", 2),
+    team_size=season_config.get("team_size", 3),
 )
 
 # Add episodes

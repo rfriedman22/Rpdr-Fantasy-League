@@ -93,6 +93,3 @@ This does a similar thing to `publish.sh`, but instead of switching branches, it
 - Show exact events week-to-week for the queens
 - Create a plot that shows each person's total score grow from week-to-week
 - Share
-
-### All Stars 11
-- Need to account for differences in team composition (2 vs 3).

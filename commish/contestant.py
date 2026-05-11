@@ -10,6 +10,8 @@ class Contestant:
         The name of the contestant.
     queen_rankings : pd.DataFrame
         A DataFrame containing the contestant's rankings of the queens, with one queen name per row, ordered from highest to lowest rank. The first queen is the captain, the next two are team members.
+    team_size : int, optional
+        The number of queens on each contestant's team (including the captain). Default is 3.
 
     Attributes
     ----------
@@ -17,14 +19,17 @@ class Contestant:
         The name of the contestant.
     queen_rankings : pd.DataFrame
         A DataFrame containing the contestant's rankings of the queens, with columns "queen" and "rank".
+    team_size : int
+        The number of queens on the contestant's team (including the captain).
     """
 
-    def __init__(self, name, queen_rankings):
+    def __init__(self, name, queen_rankings, team_size=3):
         self.name = name
 
         queen_rankings["rank"] = queen_rankings.index + 1
         queen_rankings = queen_rankings.set_index("queen", drop=False)
         self.queen_rankings = queen_rankings
+        self.team_size = team_size
 
     def get_queen_rankings(self):
         """Get the contestant's rankings of the queens."""
@@ -35,8 +40,8 @@ class Contestant:
         return self.get_queen_rankings().iloc[0]["queen"]
 
     def get_team(self):
-        """Get the contestant's team (the first three queens ranked)."""
-        return self.get_queen_rankings().iloc[:3]["queen"].values
+        """Get the contestant's team (the first `team_size` queens ranked)."""
+        return self.get_queen_rankings().iloc[: self.team_size]["queen"].values
 
 
 class Contestants:
@@ -48,6 +53,8 @@ class Contestants:
         The path to the file containing the contestants' data. Each row is a contestant and their rankings of the queens. The header row is skipped.
     n_queens : int
         The number of queens in the cast.
+    team_size : int, optional
+        The number of queens on each contestant's team (including the captain). Default is 3.
 
     Attributes
     ----------
@@ -55,7 +62,7 @@ class Contestants:
         A DataFrame where the index is the contestant's name and there is a column "contestant" containing the Contestant objects.
     """
 
-    def __init__(self, contestant_file, n_queens):
+    def __init__(self, contestant_file, n_queens, team_size=3):
         names = ["name"] + [str(i) for i in range(1, n_queens + 1)]
         contestants_df = pd.read_csv(
             contestant_file,
@@ -69,7 +76,9 @@ class Contestants:
         contestants = pd.Series(
             {
                 name: Contestant(
-                    name, data.rename("queen").reset_index(drop=True).to_frame()
+                    name,
+                    data.rename("queen").reset_index(drop=True).to_frame(),
+                    team_size=team_size,
                 )
                 for name, data in contestants_df.iterrows()
             }
@@ -131,7 +140,7 @@ class Contestants:
         Returns
         -------
         pd.Series
-            A Series where the index is the contestant's name and the values are the teams (the first three queens ranked) for each contestant.
+            A Series where the index is the contestant's name and the values are the teams (the first `team_size` queens ranked) for each contestant.
         """
         return (
             self.contestants["contestant"].apply(lambda c: c.get_team()).rename("team")
