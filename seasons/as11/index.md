@@ -31,17 +31,24 @@ This season's queens are:
 Jump to a section:
 - [Scoring](#scoring)
 - [Teams](#teams)
+- [Total Scores](#total-scores)
+- [Rank Scores](#rank-scores)
+- [Performance Scores](#performance-scores)
 
 
 ## Scoring
 
 ### The Tournament of All Stars
 
-This season is a "Tournament of All Stars." There are 18 queens split into 3 heats (the show incorrectly calls this a bracket).  The other 9 queens will initially tie for 10th place. For bookkeeping purposes, this will occur after episode 9.
+This season is a "Tournament of All Stars." There are 18 queens split into 3 heats (the show incorrectly calls this a bracket). Three queens will advance from each heat to the semifinals. The other 9 queens will initially tie for 10th place. For bookkeeping purposes, this will occur after episode 9.
 
 In the semifinals, there will be two elimination episodes (10 and 11) before the bracket. Those queens will initially come in 9th and 8th place.
 
 At this point, there are 7 queens remaining. One of the queens who was previously eliminated will re-enter the race as a wild card. All the other eliminated queens will drop a rank (e.g. the queens that didn't make it out of their heat will drop from 10th place to 11th place). Finally, the 8 remaining queens compete in a Lip Sync Smackdown For The Crown. The four queens eliminated in the first round tie for 5th place, the two queens eliminated in the second round tie for 3rd place, and the final lip sync determines the winner and runner-up.
+
+### Updated Rules
+
+In All Stars 11, it was announced that only two queens advance from each heat. Since teams were submitted with the below rules, the original rankings will continue. We don't know what will happen once the semifinals start, but it's possible that some queens may have been assigned ranks that will never actually exist this season.
 
 ### Team Selection
 
@@ -102,7 +109,56 @@ At the Smackdown, Jinkx is selected as the wild card. Team 3 earns **performance
 ## Teams
 
 
-**Teams will be posted at a later date.**
+This is how everybody ranked the queens this season:
+
+| Rank                 | Brie                 | Emilee               | Evan                 | Josh                 | Jour                 | Monika               | Olivia               | Ryan                 |
+|:---------------------|:---------------------|:---------------------|:---------------------|:---------------------|:---------------------|:---------------------|:---------------------|:---------------------|
+| Winner (Captain)     | Crystal Methyd       | Crystal Methyd       | Crystal Methyd       | Kennedy Davenport    | Jasmine Kennedie     | Dawn                 | Kennedy Davenport    | Kennedy Davenport    |
+| Runner-up (Teammate) | Jasmine Kennedie     | A'keria C. Davenport | Kennedy Davenport    | Lucky Starzzz        | Crystal Methyd       | Crystal Methyd       | Crystal Methyd       | Morphine Love Dion   |
+| 3                    | Morphine Love Dion   | Silky Nutmeg Ganache | Dawn                 | Crystal Methyd       | Morgan McMichaels    | Morphine Love Dion   | Silky Nutmeg Ganache | Lucky Starzzz        |
+| 4                    | Salina EsTitties     | Sam Star             | Sam Star             | Sam Star             | Kennedy Davenport    | Jasmine Kennedie     | Jasmine Kennedie     | Silky Nutmeg Ganache |
+| 5                    | Dawn                 | Dawn                 | Lucky Starzzz        | Morgan McMichaels    | Salina EsTitties     | Morgan McMichaels    | A'keria C. Davenport | Dawn                 |
+| 6                    | Silky Nutmeg Ganache | Morphine Love Dion   | Morphine Love Dion   | Salina EsTitties     | Silky Nutmeg Ganache | Kennedy Davenport    | Dawn                 | Salina EsTitties     |
+| 7                    | Kennedy Davenport    | Kennedy Davenport    | Vivacious            | Vivacious            | Shuga Cain           | Sam Star             | Joey Jay             | Sam Star             |
+| 8                    | Sam Star             | Vivacious            | Salina EsTitties     | Jasmine Kennedie     | Morphine Love Dion   | Vivacious            | April Carrion        | Crystal Methyd       |
+| 9                    | A'keria C. Davenport | Shuga Cain           | Jasmine Kennedie     | Dawn                 | A'keria C. Davenport | Salina EsTitties     | Morphine Love Dion   | Jasmine Kennedie     |
+| 10                   | Lucky Starzzz        | Lucky Starzzz        | A'keria C. Davenport | A'keria C. Davenport | Dawn                 | A'keria C. Davenport | Lucky Starzzz        | A'keria C. Davenport |
+| 11                   | Morgan McMichaels    | Morgan McMichaels    | Morgan McMichaels    | Morphine Love Dion   | Lucky Starzzz        | Lucky Starzzz        | Morgan McMichaels    | Morgan McMichaels    |
+| 12                   | Mystique Summers     | Mystique Summers     | Mystique Summers     | Mystique Summers     | Mystique Summers     | Mystique Summers     | Mystique Summers     | Mystique Summers     |
+| 13                   | April Carrion        | April Carrion        | April Carrion        | April Carrion        | April Carrion        | April Carrion        | Aura Mayari          | April Carrion        |
+| 14                   | Aura Mayari          | Aura Mayari          | Aura Mayari          | Aura Mayari          | Aura Mayari          | Aura Mayari          | Salina EsTitties     | Aura Mayari          |
+| 15                   | Vivacious            | Salina EsTitties     | Silky Nutmeg Ganache | Silky Nutmeg Ganache | Vivacious            | Silky Nutmeg Ganache | Vivacious            | Vivacious            |
+| 16                   | Hershii LiqCour-Jete | Hershii LiqCour-Jete | Hershii LiqCour-Jete | Hershii LiqCour-Jete | Hershii LiqCour-Jete | Hershii LiqCour-Jete | Hershii LiqCour-Jete | Hershii LiqCour-Jete |
+| 17                   | Joey Jay             | Jasmine Kennedie     | Joey Jay             | Joey Jay             | Joey Jay             | Joey Jay             | Sam Star             | Joey Jay             |
+| 18                   | Shuga Cain           | Joey Jay             | Shuga Cain           | Shuga Cain           | Sam Star             | Shuga Cain           | Shuga Cain           | Shuga Cain           |
 
 
-**Scoring will be updated here as the season progresses.**
+## Total Scores
+
+Here's how everybody is doing overall this season:
+
+|                   |   Monika |   Emilee |   Josh |   Ryan |   Brie |   Evan |   Jour |   Olivia |
+|:------------------|---------:|---------:|-------:|-------:|-------:|-------:|-------:|---------:|
+| Performance Score |      100 |       65 |     10 |     10 |      0 |      0 |      0 |        0 |
+| Rank Score        |        0 |        0 |      0 |      0 |      0 |      0 |      0 |        0 |
+| Total Score       |      100 |       65 |     10 |     10 |      0 |      0 |      0 |        0 |
+
+![Total Scores](plots/total_scores.png)
+
+![Stacked Total Scores](plots/stacked_total_scores.png)
+
+## Rank Scores
+
+
+Rank scores will be displayed after a queen is eliminated.
+
+
+## Performance Scores
+
+Here's how well everyone's team is doing on a week-to-week basis:
+
+![Weekly Scores](plots/weekly_scores.png)
+
+Here is the breakdown of how each queen scored each week:
+
+![Weekly Performance Scores](plots/weekly_performance_scores.png)
