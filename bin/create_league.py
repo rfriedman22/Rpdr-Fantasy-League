@@ -32,6 +32,7 @@ season = season_config["season"]
 page_dir = os.path.join(output_dir, "seasons", str(season))
 os.makedirs(page_dir, exist_ok=True)
 
+team_size = season_config.get("team_size", 3)
 league = League(
     season=season,
     queens_file=season_config["queens"],
@@ -39,7 +40,7 @@ league = League(
     rank_score_file=season_config["rank_scores"],
     event_scores_file=season_config["event_scores"],
     captain_multiplier=season_config.get("captain_multiplier", 2),
-    team_size=season_config.get("team_size", 3),
+    team_size=team_size,
 )
 
 # Add episodes
@@ -103,9 +104,17 @@ else:
     teams_table = teams_table.rename_axis("Rank", axis="index").rename_axis(
         "", axis="columns"
     )
-    teams_table = teams_table.rename(
-        index={1: "Winner (Captain)", 2: "Runner-up (Teammate)", 3: "3rd (Teammate)"}
-    )
+    if team_size == 3:
+        reindex = {
+            1: "Winner (Captain)",
+            2: "Runner-up (Teammate)",
+            3: "3rd (Teammate)",
+        }
+    elif team_size == 2:
+        reindex = {1: "Winner (Captain)", 2: "Runner-up (Teammate)"}
+    else:
+        reindex = {i: f"{i}th" for i in teams_table.index}
+    teams_table = teams_table.rename(index=reindex)
     context["teams_table"] = teams_table.to_markdown()
 
 # Scoring info
