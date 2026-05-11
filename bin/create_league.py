@@ -139,10 +139,6 @@ if has_started:
     performance_plot_kwargs = {}
     if "performance_cmap" in season_config:
         performance_plot_kwargs["cmap"] = season_config["performance_cmap"]
-    if "invert_rank_annotation" in season_config:
-        performance_plot_kwargs["low_is_light"] = season_config[
-            "invert_rank_annotation"
-        ]
 
     rank_scores_kwargs = {}
     if "rank_scores_cmap" in season_config:
