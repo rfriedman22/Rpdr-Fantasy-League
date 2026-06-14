@@ -137,11 +137,11 @@ This is how everybody ranked the queens this season:
 
 Here's how everybody is doing overall this season:
 
-|                   |   Monika |   Emilee |   Josh |   Ryan |   Brie |   Evan |   Jour |   Olivia |
-|:------------------|---------:|---------:|-------:|-------:|-------:|-------:|-------:|---------:|
-| Performance Score |      100 |       65 |     10 |     10 |      0 |      0 |      0 |        0 |
-| Rank Score        |        0 |        0 |      0 |      0 |      0 |      0 |      0 |        0 |
-| Total Score       |      100 |       65 |     10 |     10 |      0 |      0 |      0 |        0 |
+|                   |   Monika |   Emilee |   Brie |   Evan |   Jour |   Olivia |   Josh |   Ryan |
+|:------------------|---------:|---------:|-------:|-------:|-------:|---------:|-------:|-------:|
+| Performance Score |      320 |      275 |    205 |    180 |    140 |       90 |     20 |     20 |
+| Rank Score        |        0 |        0 |      0 |      0 |      0 |        0 |      0 |      0 |
+| Total Score       |      320 |      275 |    205 |    180 |    140 |       90 |     20 |     20 |
 
 ![Total Scores](plots/total_scores.png)
 
