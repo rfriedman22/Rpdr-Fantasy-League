@@ -1,0 +1,41 @@
+{
+    "episode": 8,
+    "finale": false,
+    "queen_eliminated": [],
+    "returning_queen": [],
+    "performance": {
+        "tops": [
+            "Hershii LiqCour-Jete",
+            "Kennedy Davenport"
+        ],
+        "win_main_challenge": [
+            "Kennedy Davenport"
+        ],
+        "bottoms": [
+        ],
+        "lip_sync_for_your_life": [],
+        "lip_sync_winner": [],
+        "win_mini_challenge": [
+            "Joey Jay",
+            "Shuga Cain"
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": [],
+        "receive_mvq_vote": [
+            "Hershii LiqCour-Jete",
+            "Shuga Cain",
+            "Joey Jay",
+            "Kennedy Davenport"
+        ],
+        "wild_card": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
