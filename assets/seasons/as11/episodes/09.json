@@ -1,0 +1,55 @@
+{
+    "episode": 9,
+    "finale": false,
+    "queen_eliminated": [
+        "Hershii LiqCour-Jete",
+        "Joey Jay",
+        "Shuga Cain",
+        "April Carrion",
+        "Aura Mayari",
+        "Salina EsTitties",
+        "Vivacious",
+        "Lucky Starzzz",
+        "Morgan McMichaels",
+        "Morphine Love Dion",
+        "Mystique Summers"
+    ],
+    "returning_queen": [],
+    "performance": {
+        "tops": [
+            "Kennedy Davenport",
+            "Sam Star"
+        ],
+        "win_main_challenge": [
+            "Kennedy Davenport"
+        ],
+        "bottoms": [
+        ],
+        "lip_sync_for_your_life": [],
+        "lip_sync_winner": [],
+        "win_mini_challenge": [
+        ],
+        "double_sashay": false,
+        "double_shantay": false,
+        "runway_malfunction": [],
+        "wig_reveal": [],
+        "lip_sync_malfunction": [],
+        "miss_congeniality": [],
+        "wins_lip_sync_smackdown": [],
+        "receive_mvq_vote": [
+            "Joey Jay",
+            "Shuga Cain",
+            "Sam Star",
+            "Jasmine Kennedie",
+            "Jasmine Kennedie",
+            "Jasmine Kennedie",
+            "Jasmine Kennedie",
+            "Hershii LiqCour-Jete"
+        ],
+        "wild_card": []
+    },
+    "finale_data": {
+        "winner": [],
+        "runners_up": []
+    }
+}
