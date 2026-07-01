@@ -176,3 +176,4 @@ Here's how well everyone's team is doing on a week-to-week basis:
 Here is the breakdown of how each queen scored each week:
 
 ![Weekly Performance Scores](plots/weekly_performance_scores.png)
+
