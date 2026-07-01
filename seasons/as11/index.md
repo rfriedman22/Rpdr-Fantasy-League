@@ -48,7 +48,9 @@ At this point, there are 7 queens remaining. One of the queens who was previousl
 
 ### Updated Rules
 
-In All Stars 11, it was announced that only two queens advance from each heat. Since teams were submitted with the below rules, the original rankings will continue. We don't know what will happen once the semifinals start, but it's possible that some queens may have been assigned ranks that will never actually exist this season.
+In All Stars 11, it was announced that only two queens advance from each heat. Since teams were submitted with the below rules, the original rankings will continue. ~~We don't know what will happen once the semifinals start, but it's possible that some queens may have been assigned ranks that will never actually exist this season.~~
+
+Episode 9 ended with three queens advancing from the third heat. That means that 7 queens advanced to the semi-finals and the remaining 11 queens temporarily tie for 8th place. Three queens were considered for the one remaining wildcard: Morgan McMichaels, Salina EsTitties, and Joey Jay. Whichever queen is announced at the start of Episode 10 will re-enter the race and receive bonus points for being the wild card. At that point, the 10 queens who are not in the semi-finals will drop to 9th place. The rank score values remain the same as the original rules used to create this season.
 
 ### Team Selection
 
@@ -80,11 +82,21 @@ You will also earn points based on the **accuracy of your rankings.** Based on h
 |      1 |                  25 |                   25 |
 |      2 |                  15 |                   15 |
 |      3 |                  10 |                   10 |
+|      4 |                  10 |                   10 |
 |      5 |                   4 |                    4 |
+|      6 |                   4 |                    4 |
+|      7 |                   4 |                    4 |
 |      8 |                   3 |                    3 |
 |      9 |                   3 |                    3 |
 |     10 |                   2 |                    2 |
 |     11 |                   1 |                    1 |
+|     12 |                   1 |                    1 |
+|     13 |                   1 |                    1 |
+|     14 |                   1 |                    1 |
+|     15 |                   1 |                    1 |
+|     16 |                   1 |                    1 |
+|     17 |                   1 |                    1 |
+|     18 |                   1 |                    1 |
 
 Due to the wild card, you can only guess three of the four queens that tie for 5th place, and the score for 8th place is a placeholder. This means it is impossible to get a perfect rank score. The closest you can get is to get the top 7 correct, the queen you place in 8th is the wild card, and the queen you place in 9th advanced to the semi-finals, but not to the Smackdown. The second best case scenario is the reverse -- the queen you place in 8th advances to the semi-finals and the queen you place in 9th is the wild card.
 
@@ -137,11 +149,11 @@ This is how everybody ranked the queens this season:
 
 Here's how everybody is doing overall this season:
 
-|                   |   Monika |   Emilee |   Brie |   Evan |   Jour |   Olivia |   Josh |   Ryan |
-|:------------------|---------:|---------:|-------:|-------:|-------:|---------:|-------:|-------:|
-| Performance Score |      320 |      275 |    205 |    180 |    140 |       90 |     20 |     20 |
-| Rank Score        |        0 |        0 |      0 |      0 |      0 |        0 |      0 |      0 |
-| Total Score       |      320 |      275 |    205 |    180 |    140 |       90 |     20 |     20 |
+|                   |   Monika |   Olivia |   Ryan |   Evan |   Josh |   Brie |   Emilee |   Jour |
+|:------------------|---------:|---------:|-------:|-------:|-------:|-------:|---------:|-------:|
+| Performance Score |      320 |      330 |    260 |    300 |    260 |    245 |      275 |    220 |
+| Rank Score        |       81 |       57 |    111 |     66 |    102 |     90 |       57 |     84 |
+| Total Score       |      401 |      387 |    371 |    366 |    362 |    335 |      332 |    304 |
 
 ![Total Scores](plots/total_scores.png)
 
@@ -150,7 +162,9 @@ Here's how everybody is doing overall this season:
 ## Rank Scores
 
 
-Rank scores will be displayed after a queen is eliminated.
+Here is how every queen finished and how many points they earned for each contestant in the league. Queens still in the competition are at the bottom:
+
+![Rank Scores](plots/rank_scores.png)
 
 
 ## Performance Scores
